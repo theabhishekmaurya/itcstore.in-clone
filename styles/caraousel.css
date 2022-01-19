@@ -1,0 +1,119 @@
+#quickSearch{
+    height: 100px;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+
+}
+#insideQS{
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 80%;
+    justify-content: space-between;
+    font-family:sans-serif;
+    color: rgb(88, 87, 87);
+}
+#insideQS>button{
+    width: 14%;
+    height: 45%;
+    border-radius: 7px;
+    border: 0.5px solid black;
+    color: rgb(36, 36, 68);
+    font-weight: bold;
+    font-size: 100%;
+    font-family: sans-serif;
+    background-color: white;
+}
+#insideQS>button:hover{
+    background-color: rgb(116, 173, 30);
+    transition-duration: 0.5s;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+@media only screen and (min-width: 650px) and (max-width:1200px){
+    #insideQS>h4{
+        display: none;
+    }
+    #insideQS{
+        display: grid;
+        box-sizing: border-box;
+        height: 90%;
+        width: 70%;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10%;
+    }
+    #quickSearch{
+        margin-top: 2%;
+        height: 100px;
+    }
+    #insideQS>button{
+    width: auto;
+    height: 80%;
+    font-size: 100%;
+    border-radius: 7px;
+    border: 0.5px solid black;
+
+    }
+}
+@media only screen and (min-width:420px) and (max-width:650px){
+    .slider{
+        margin: auto;
+        min-height: 140px;
+    }
+    #quickSearch{
+        margin-top: 2%;
+        height: 100px;
+    }
+    #insideQS>h4{
+        display: none;
+    }
+    #insideQS{
+        display: grid;
+        box-sizing: border-box;
+        height: 90%;
+        width: 80%;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 5%;
+    }
+    #insideQS>button{
+    width: auto;
+    height: 80%;
+    font-size: 90%;
+    border-radius: 7px;
+    border: 0.5px solid black;
+
+    }
+}
+@media only screen and (max-width:450px){
+    .slider{
+        margin: auto;
+        min-height: 140px;
+    }
+    #insideQS>h4{
+        display: none;
+    }
+    #quickSearch{
+        margin-top: 2%;
+        height: 100px;
+    }
+    
+    #insideQS{
+        display: grid;
+        box-sizing: border-box;
+        height: 90%;
+        width: 100%;
+        border: 1px solid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 5%;
+    }
+    #insideQS>button{
+    width: auto;
+    height: 80%;
+    font-size: 80%;
+    }
+}

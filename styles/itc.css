@@ -1,0 +1,131 @@
+/* *{
+    margin: 0%;
+} */
+#pre{
+    background-color: #142d69;
+}
+#pre>:nth-child(1){
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    /* border: 1px solid; */
+}
+#pre1>:nth-child(1){
+    color: #eabc22;
+    margin: 10px 0 0 10px;
+}
+#pre1>:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+}
+#block_4>div{
+    margin-top: 20px;
+    width: 22%;
+    height: 250px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.imgblock1234{
+    border-radius: 5px;
+}
+#atag1{
+    text-decoration: none;
+}
+
+#sellers_1{
+    height: 100%;
+    width: 85%;
+    margin: auto;
+}
+#sellers_1>:nth-child(1){
+    margin: 20px 0px;
+}
+#sellers_1>:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+}
+#block_5>div{
+    width: 18%;
+    border: 1px solid #c4c4c4;
+    border-radius: 15px;
+    height: 300px;
+    margin-bottom: 15px;
+}
+.block_51{
+    width: 90%;
+    margin: auto;
+    height: 190px;
+}
+a{
+    text-decoration: none;
+}
+.ptag{
+    color: #a39393;
+    margin: 5px 0px;
+    text-align: center;
+}
+.btn12345{
+    width: 80%;
+    border-radius: 10px;
+    background-color: #a2d605;
+    color: white;
+    border: none;
+    height: 27px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+@media only screen and (min-width: 376px) and (max-width: 768px){
+    #pre1>:nth-child(2){
+        display: grid;
+        justify-content: space-between;
+    }
+    #block_4>div{
+        margin-top: 20px;
+        width: 90%;
+        height: 250px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        
+    }
+    #block_4{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    #sellers_1>:nth-child(2){
+        display: grid;
+        justify-content: space-between;
+    }
+    #block_5{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    #block_5>div{
+        margin-top: 20px;
+        width: 90%;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        
+    }
+}
+@media only screen and (min-width: 0px) and (max-width: 375px){
+    #block_4{
+        flex-direction: column;
+    }
+    #block_4>div{
+        width: 90%;
+        margin: auto;
+        margin: 15px 1px;
+    }
+    #block_5{
+        flex-direction: column;
+    }
+    #block_5>div{
+        width: 90%;
+        margin: auto;
+        margin: 15px 1px;
+    }
+
+    
+    
+}
+
