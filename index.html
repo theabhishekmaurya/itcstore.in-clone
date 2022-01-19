@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ITC Store - Buy ITC Products</title>
     <link rel="stylesheet" href="./styles/navbar.css" />
-    <script
-      src="https://kit.fontawesome.com/cb6e07c0b2.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/caraousel.css" />
     <link rel="stylesheet" href="./styles/staple.css" />
@@ -18,22 +14,25 @@
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/offer.css" />
     <link rel="stylesheet" href="./styles/itc.css" />
-    <link rel="stylesheet" href="./styles/newITC.css">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-    />
+    <link rel="stylesheet" href="./styles/newITC.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script
+      src="https://kit.fontawesome.com/cb6e07c0b2.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <style>
-      .cardHead{
-          font-weight: bold;
-          margin-left:5% ;
-          color: gray;
-      }
+    .cardHead {
+      font-weight: bold;
+      margin-left: 5%;
+      color: gray;
+    }
   </style>
   <body>
-    <navbar> </navbar>
+    <navbar> 
+
+    </navbar>
     <div
       id="topCar"
       style="margin-top: 2%"
@@ -125,7 +124,7 @@
     </div>
     <div id="pre">
       <div id="pre1">
-        <div><h2 style="margin-top: 2%;">ITC Premium</h2></div>
+        <div><h2 style="margin-top: 2%">ITC Premium</h2></div>
         <div id="block_4">
           <div id="block_41">
             <a href=""
@@ -172,7 +171,7 @@
     </div>
     <div id="sellers">
       <div id="sellers_1">
-        <div><h2 style="font-weight: bold; color: gray;">Best Sellers</h2></div>
+        <div><h2 style="font-weight: bold; color: gray">Best Sellers</h2></div>
         <div id="block_5">
           <div>
             <a href=""
@@ -442,9 +441,13 @@
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script type="module">
   import navbar from "./components/navbar.js";
   document.querySelector("navbar").innerHTML = navbar();
+  document.getElementById("login").addEventListener("click", () => {
+    window.location.href = "login_signup.html";
+  });
 
   //new itc data add
 
@@ -469,7 +472,7 @@
 
   data.map(function (elem) {
     var div = document.createElement("div");
-    div.setAttribute("id","newITC");
+    div.setAttribute("id", "newITC");
     var img = document.createElement("img");
     img.setAttribute("src", elem.image_url);
 
@@ -486,34 +489,34 @@
 
   //new itc end
 
-//   document.getElementById("foods").addEventListener("mouseover", () => {
-//     document.getElementById("food_box").style.display = "flex";
-//   });
+  //   document.getElementById("foods").addEventListener("mouseover", () => {
+  //     document.getElementById("food_box").style.display = "flex";
+  //   });
 
-//   document.querySelector("body").addEventListener("mouseout", () => {
-//     document.getElementById("food_box").style.display = "none";
-//     document.getElementById("product_box").style.display = "none";
-//     document.getElementById("boxbybrand").style.display = "none";
-//     document.getElementById("statitonary_prod").style.display = "none";
-//     document.getElementById("match_box").style.display = "none";
-//   });
-//   document.getElementById("personal_care").addEventListener("mouseover", () => {
-//     document.getElementById("product_box").style.display = "flex";
-//   });
-//   document.querySelector("body").addEventListener("mouseout", () => {
-//     document.getElementById("food_box").style.display = "none";
-//     document.getElementById("product_box").style.display = "none";
-//     document.getElementById("boxbybrand").style.display = "none";
-//     document.getElementById("statitonary_prod").style.display = "none";
-//     document.getElementById("match_box").style.display = "none";
-//   });
-//   document.getElementById("stat").addEventListener("mouseover", () => {
-//     document.getElementById("statitonary_prod").style.display = "block";
-//   });
-//   document.getElementById("match").addEventListener("mouseover", () => {
-//     document.getElementById("match_box").style.display = "flex";
-//   });
-//   document.getElementById("shb").addEventListener("mouseover", () => {
-//     document.getElementById("boxbybrand").style.display = "flex";
-//   });
+  //   document.querySelector("body").addEventListener("mouseout", () => {
+  //     document.getElementById("food_box").style.display = "none";
+  //     document.getElementById("product_box").style.display = "none";
+  //     document.getElementById("boxbybrand").style.display = "none";
+  //     document.getElementById("statitonary_prod").style.display = "none";
+  //     document.getElementById("match_box").style.display = "none";
+  //   });
+  //   document.getElementById("personal_care").addEventListener("mouseover", () => {
+  //     document.getElementById("product_box").style.display = "flex";
+  //   });
+  //   document.querySelector("body").addEventListener("mouseout", () => {
+  //     document.getElementById("food_box").style.display = "none";
+  //     document.getElementById("product_box").style.display = "none";
+  //     document.getElementById("boxbybrand").style.display = "none";
+  //     document.getElementById("statitonary_prod").style.display = "none";
+  //     document.getElementById("match_box").style.display = "none";
+  //   });
+  //   document.getElementById("stat").addEventListener("mouseover", () => {
+  //     document.getElementById("statitonary_prod").style.display = "block";
+  //   });
+  //   document.getElementById("match").addEventListener("mouseover", () => {
+  //     document.getElementById("match_box").style.display = "flex";
+  //   });
+  //   document.getElementById("shb").addEventListener("mouseover", () => {
+  //     document.getElementById("boxbybrand").style.display = "flex";
+  //   });
 </script>
