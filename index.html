@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./styles/newITC.css" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="./styles/footer.css">
+    <script src="https://kit.fontawesome.com/332452e3a6.js" crossorigin="anonymous"></script>
     <script
       src="https://kit.fontawesome.com/cb6e07c0b2.js"
       crossorigin="anonymous"
@@ -436,6 +438,28 @@
         />
       </div>
     </div>
+    <div id="need_basket_container">
+        <div id="head">
+        <h2>Need Based Basket</h2>
+        <button id="basket_btn">View All</button>
+    </div>
+        <div id="basket">
+          <div>
+              <img  src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Back_to_College_053d1e24-467e-4632-ae4e-638b65b576fd.jpg?v=1641452204" alt="">
+          </div>
+          <div>
+              <img src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Monthly_Essentials_2f1e4fee-9dee-4612-b312-62a2b1f68f5f.jpg?v=1641452204" alt="">
+          </div>
+          <div>
+              <img src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Wellness_Basket_fbb6c480-ad9d-4e43-b207-dd41de8ab219.jpg?v=1641452204" alt="">
+          </div>  
+          <div><img src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Snack_Store_fe51b27e-0f90-44f2-b4e1-34f176c4aee5.jpg?v=1641452204" alt=""></div>
+        </div>
+    </div>
+        
+    <footer>
+
+    </footer>
   </body>
 </html>
 
@@ -444,7 +468,9 @@
 
 <script type="module">
   import navbar from "./components/navbar.js";
+  import footer from "./components/footer.js";
   document.querySelector("navbar").innerHTML = navbar();
+  document.querySelector("footer").innerHTML=footer();
   document.getElementById("login").addEventListener("click", () => {
     window.location.href = "login_signup.html";
   });
