@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/cb6e07c0b2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/cart.css">
+    <style>
+    #top_nav{
+display: flex;
+margin-left: 10%;
+width: 90%;
+
+    }
+  #image_logo{
+     margin-top: 1%;
+     margin-left: 5%;
+
+  }
+
+    /* #information{
+        margin-top: 1%;
+        margin-left: 2%;
+        width: 400px;
+        height: 50px;
+        border: 1px solid black;
+    }  */
+    #lower_det{
+        width: 80%;
+        height: 800px;
+        /* border: 1px  solid black; */
+        margin-top: 2%;
+        margin-left: 10%;
+        display: flex;
+    }
+    #cart_left{
+        width: 90%;
+        height: 100%;
+        border: 1px   red;
+        margin-left: 5%;
+        font-family: sans-serif;
+    }
+    #cart_right{
+        /* margin-left: 2%; */
+        width: 60%;
+        height: 90%;
+        margin-left: 2%;
+        border: 1px    red;
+        background-color: 
+#fafafa;
+font-family: sans-serif;
+    }
+    #cart_left p{
+      font-size: 20px;
+      margin-top: 0%;
+      font-family: sans-serif;
+    }
+    #width{
+        width: 85%;
+        height: 6%;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #name_info{
+        width: 41%;
+        height: 6%;
+        border-radius: 5px;
+    }
+    .last{
+        margin-left: 1%;
+    }
+    #city_add{
+        width: 27%;
+        height: 6%;
+        border-radius: 5px;
+    }
+    #widt{
+        width: 85%;
+        height: 6%;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #phone_info{
+        width: 200px;
+        height: 50px;
+        border: 1px  black;
+        text-align: center;
+        margin-left: 72%;
+        background-color: grey;
+        color: white;
+        display: none;
+    }
+    #button_shipping{
+        margin-left: 80%;
+        width: 20%;
+        height: 8%;
+        background-color: #000000;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-size: 15px;
+    }
+    #question{
+        cursor: pointer;
+    }
+    #upper_right{
+        width: 100%;
+        height: 40%;
+        overflow: scroll;
+        border: 1px   black;
+    }
+    #lower_right{
+     margin-left: 5%;
+        width: 95%;
+        height: 60%;
+        /* border: 1px solid black; */
+        font-family: sans-serif;
+    }
+    #gift_card_bx{
+        width: 70%;
+        height: 10%;
+        border-radius: 5px;
+    }
+    #apply{
+        width: 26%;
+        height: 11%;
+        border-radius: 3px;
+    }
+    body{
+        font-family: sans-serif;
+    }
+    #payment_info{
+        margin-top: 8%;
+        width: 85%;
+        height: 15%;
+    border: 1px solid grey;
+    }
+   #data_user{
+       margin-left: 2%;
+       margin-top: 2%;
+   }
+   a{
+       text-decoration: none;
+       color: black;
+   }
+   #visa_info{
+       width: 85%;
+       height: 25%;
+       border: 1px solid black;
+       background-color: #fafafa;
+   }
+   #razor_pay{
+       width: 100%;
+       height: 25%;
+       border: 1px solid black;
+  
+   }
+   #razor_img{
+       margin-top: 2%;
+       margin-left: 2%;
+   }
+   #visa_logo{
+    margin-top: 1%;
+       margin-left: 15%;
+   }
+   #amex_logo{
+       margin-bottom: 1%;
+   }
+   #Rupay_logo,#master_logo{
+       margin-bottom: 1%;
+   }
+#data_info p{
+    font-size: 15px;
+    font-family: sans-serif;
+   text-align: center;
+    margin-top: 10%;
+    
+}
+#billing_info{
+    margin-top: 10%;
+}
+#shipping_box{
+    width: 100%;
+    height: 12%;
+    border: 1px solid black;
+}
+#information{
+        margin-left: 2%;
+        width: 60%;
+        height: 60px;
+        /* border: 1px solid black; */
+    } 
+    #information>img{
+        width: 100%;
+        height: 100%;
+        margin-top: 0%;
+    }
+ #extra_item{
+     /* border: 1px solid; */
+     margin-top: 0px;
+ }
+    </style>
+</head>
+<body>
+    <div id="top_nav">
+
+            <img id="image_logo" src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC-Store-logo.jpg?143558" width="13%"  height="10%" alt="">
+
+    
+        <div id="information">
+            <img src="payments.png" alt="">
+        </div>
+        
+    </div>
+    <div id="lower_det">
+        <div id="cart_left">
+          <div id="payment_info">
+              <div id="data_user">
+              Contact  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; <span id="mail">akash@gmail.com</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; 
+              <br><hr>
+              Ship to  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="add">lucknow Up,India</span>&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
+              <br><hr>
+              Method &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Free Shipping ·Free&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </div>
+          </div>
+          <br><br><br>
+          <p>Payment</p><br>All transactions are secure and encrypted  <br><br>
+              <div id="visa_info">
+                  <div id="razor_pay">
+                      <img id="razor_img" src="https://cdn.shopify.com/s/files/applications/e273f27d4c4fa65fc8e2af05e552f04e.png?height=24&1637057371"  alt="">
+                  <img id="visa_logo" src="data:image/png;base64,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" alt="" width="10%" height="80%">
+   <img id="amex_logo" src="https://cdn.icon-icons.com/icons2/1178/PNG/512/amex_82052.png" alt="" width="10%" height="50%">
+   <img id="master_logo" src="https://cdn.vox-cdn.com/thumbor/UKSLdttYoIK2bv1gd231rqL4eiQ=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13674554/Mastercard_logo.jpg" width="5%" height="40%" alt="">
+   <img id="Rupay_logo" src="https://myind.net/sites/default/files/field/image/06cd1a3c_rupay-logo.png" width="10%" height="50%" alt="" >more.
+   
+                    </div>
+                    <div id="data_info"><p>After clicking “Complete order”, you will be redirected to Razorpay (Cards, UPI, NetBanking, Wallets, Paypal) to complete your purchase securely.</p></div>
+                  
+              </div>
+          <div id="billing_info">
+            <p> Billing address</p>Select the address that matches your card or payment method.
+          </div>
+          <div id="shipping_box">
+             <br> <input type="radio">	Same as shipping address <br><hr>
+              <input type="radio">Use a different billing address
+
+          </div><br><br>
+          <button id="button_shipping">Complete order</button><br><br><br>
+           <hr><br>
+    
+
+           <div id="extra_item">
+            Refund &nbsp; &nbsp; Shipping Policy &nbsp; &nbsp; Privacy Policy&nbsp; &nbsp;Terms of service
+           </div><br><br>
+
+        </div>
+        <div id="cart_right">
+            <div id="upper_right"></div>
+            <div id="lower_right">
+             
+                <input id="gift_card_bx" type="text" placeholder="Gift card or discount code">
+                <button id="apply">Apply</button>
+            <br><br><br>
+                <hr><br>
+                <p>Subtotal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ₹<span id="tot1">0.00</span></p>
+                <p>Shipping  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Calculate At next step</p>
+                <hr>
+                <p>Total &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;     INR ₹<span2 id="tot2">0.00</p>
+                <p>Your total saving &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; Rs.0.00  </p>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>
+<script>
+    // document.getElementById("question").addEventListener("mouseover", ()=>{
+    //     document.getElementById("phone_info").style.display = "flex"
+    // })
+    // document.querySelector("body").addEventListener("mouseout",()=>{
+    //     document.getElementById("phone_info").style.display = "none"
+
+    // })
+
+    document.getElementById("button_shipping").onclick=()=>{
+            window.location.href="razorpay.html"
+        }
+
+        let useradd=JSON.parse(localStorage.getItem("user_add"));
+        document.getElementById("mail").textContent=useradd.email;
+        document.getElementById("add").textContent=useradd.add
+
+
+        //adding cart
+
+    function addCart(){
+    
+    var total=0, items=0;
+    let cartItem=JSON.parse(localStorage.getItem("cart_item")) || [];
+    document.getElementById("upper_right").innerHTML="";
+    cartItem.map((elem,index)=>{
+        total+=elem.quant*elem.price;
+        items+=elem.quant;
+        let div = document.createElement("div");
+        let div1 = document.createElement("div");
+        div1.setAttribute("id","mid1");
+    
+        let img1 = document.createElement("img");
+        img1.setAttribute("id","mid2");
+        img1.src=elem.image
+        let div2 = document.createElement("div");
+        div2.setAttribute("id","mid3");
+    
+        let div3 = document.createElement("div");
+        div3.setAttribute("id","name");
+        let p = document.createElement("div");
+        p.textContent=elem.name;
+        p.style.fontSize="13px";
+        p.style.marginTop="10px";
+        p.style.marginRight="10px";
+    
+        let img2 =document.createElement("img");
+        img2.src="https://cdn-icons.flaticon.com/png/128/484/premium/484560.png?token=exp=1642703229~hmac=c93f0611375c8c1eb72d930d29d77bbc";
+        img2.style.cursor="pointer";
+        img2.style.height="20px";
+        img2.style.width="20px";
+        img2.id="delIcon"
+        img2.onclick=()=>{
+            cartItem.splice(index,1);
+            console.log(cartItem);
+            localStorage.setItem("cart_item",JSON.stringify(cartItem));
+            addCart();
+        }
+
+
+        let div4=document.createElement("div");
+        div4.setAttribute("id","price");
+        let div5 = document.createElement("div");
+        div5.setAttribute("id","value");
+        let img3=document.createElement("img");
+        img3.src="https://cdn-icons.flaticon.com/png/128/3941/premium/3941860.png?token=exp=1642703740~hmac=8d5ec69fc968c553222e0bbb962cba93";
+        img3.style.height="20px";
+        img3.style.width="20px";
+        let p1 = document.createElement("div");
+        p1.textContent= 1;
+        p1.style.fontSize="20px";
+        p1.style.marginLeft="8px";
+        let img4=document.createElement("img");
+        img4.src="https://cdn-icons-png.flaticon.com/128/992/992651.png";
+        img4.style.height="20px";
+        img4.style.width="20px";
+        img4.style.marginLeft="8px";
+    
+    
+    
+        let div6 = document.createElement("div");
+        div6.setAttribute("id","paisa");
+        let p2 = document.createElement("div");
+        p2.textContent= elem.quant;
+        p2.style.fontSize="18px";
+        p2.style.marginLeft="8px";
+    
+        let img5=document.createElement("img");
+        img5.src="  https://cdn-icons.flaticon.com/png/128/2732/premium/2732657.png?token=exp=1642703822~hmac=dbf08188166b6ecc76acf5aa2e5c4b6e";
+        img5.style.height="18px";
+        img5.style.width="18px";
+        img5.style.marginLeft="1px";
+        img5.style.marginTop="2px"
+    
+        let p3 = document.createElement("div");
+        p3.textContent= `Rs. ${elem.price}`;
+        p3.style.fontSize="18px";
+        p3.style.marginLeft="8px";
+    
+        let div7=document.createElement("div");
+        div7.setAttribute("id","hr");
+    
+    
+    
+    
+    div6.append(p2,img5,p3);
+    div5.append(img3,p1,img4);
+    div4.append(div5,div6);
+    div3.append(p,img2);
+    div2.append(div3,div4);
+    div1.append(img1,div2);
+    
+    div.append(div1);
+    
+    
+    
+    document.querySelector("#upper_right").append(div,div7);
+})
+
+
+document.querySelector("#tot1").textContent=total;
+document.querySelector("#tot2").textContent=total;
+}
+addCart();
+
+    //
+</script>

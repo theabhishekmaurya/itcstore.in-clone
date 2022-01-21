@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information</title>
+    <title>Document</title>
     <script src="https://kit.fontawesome.com/cb6e07c0b2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/cart.css">
-    <style>
+   <style>
     #top_nav{
 display: flex;
 margin-left: 10%;
@@ -20,17 +20,13 @@ width: 90%;
 
   }
 
-    #information{
+    /* #information{
+        margin-top: 1%;
         margin-left: 2%;
-        width: 60%;
-        height: 60px;
-        /* border: 1px solid black; */
-    } 
-    #information>img{
-        width: 100%;
-        height: 100%;
-        margin-top: 0%;
-    }
+        width: 400px;
+        height: 50px;
+        border: 1px solid black;
+    }  */
     #lower_det{
         width: 80%;
         height: 800px;
@@ -45,13 +41,12 @@ width: 90%;
         border: 1px   red;
         margin-left: 5%;
         font-family: sans-serif;
-        /* border: 1px solid; */
     }
     #cart_right{
         /* margin-left: 2%; */
         width: 60%;
-        height: 100%;
-        border: 1px   red;
+        height: 80%;
+        border: 1px    red;
         background-color: 
 #fafafa;
 font-family: sans-serif;
@@ -60,8 +55,6 @@ font-family: sans-serif;
       font-size: 20px;
       margin-top: 0%;
       font-family: sans-serif;
-      
-      width: 90%;
     }
     #width{
         width: 85%;
@@ -99,8 +92,8 @@ font-family: sans-serif;
         display: none;
     }
     #button_shipping{
-        margin-left: 50%;
-        width: 38%;
+        margin-left: 80%;
+        width: 20%;
         height: 8%;
         background-color: #000000;
         color: white;
@@ -109,23 +102,21 @@ font-family: sans-serif;
         font-family: sans-serif;
         font-size: 15px;
     }
-    
     #question{
         cursor: pointer;
     }
     #upper_right{
         width: 100%;
-        margin: auto;
         height: 40%;
+        /* border: 1px solid  black; */
         overflow: scroll;
-        /* border: 1px solid   black; */
     }
     #lower_right{
      margin-left: 5%;
         width: 95%;
         height: 60%;
-        margin-top: 5%;
-        /* border: 1px solid black; */
+        margin-top: 3%;
+        border: 1px  black;
         font-family: sans-serif;
     }
     #gift_card_bx{
@@ -141,18 +132,99 @@ font-family: sans-serif;
     body{
         font-family: sans-serif;
     }
-    #topmsg{
-        display: inline;
-        /* border: 1px solid; */
-        width: 80%;
+    #payment_info{
+        margin-top: 8%;
+        width: 85%;
         height: 10%;
-        text-align: left;
+    border: 1px solid grey;
     }
-    #topmsg>p{
-        font-size: 13px;
-    }
-    #image_logo:hover{
+   #data_user{
+       margin-left: 2%;
+       margin-top: 2%;
+   }
+   a{
+       text-decoration: none;
+       color: black;
+   }
+   #visa_info{
+       width: 85%;
+       height: 25%;
+       border: 1px solid black;
+       background-color: #fafafa;
+   }
+   #razor_pay{
+       width: 100%;
+       height: 25%;
+       border: 1px solid black;
+  
+   }
+   #razor_img{
+       margin-top: 2%;
+       margin-left: 2%;
+   }
+   #visa_logo{
+    margin-top: 1%;
+       margin-left: 15%;
+   }
+   #amex_logo{
+       margin-bottom: 1%;
+   }
+   #Rupay_logo,#master_logo{
+       margin-bottom: 1%;
+   }
+#data_info p{
+    font-size: 15px;
+    font-family: sans-serif;
+   text-align: center;
+    margin-top: 10%;
+    
+}
+#billing_info{
+    margin-top: 10%;
+}
+#shipping_box{
+    width: 100%;
+    height: 12%;
+    border: 1px solid black;
+}
+#free_shipping{
+    width: 85%;
+    height: 5%;
+    border: 1px solid black;
+  
+}
+#free_shipping input{
+    margin-top: 2%;
+    margin-left: 2%;
+    
+}
+#free_ship{
+    margin-left: 68%;
+}
+#continueto_pay{
+    margin-left: 60%;
+        width: 25%;
+        height: 7%;
+        background-color: #000000;
+        color: white;
+        border-radius: 5px;
         cursor: pointer;
+        font-family: sans-serif;
+        font-size: 15px;  
+}
+#image_logo:hover{
+        cursor: pointer;
+    }
+    #information{
+        margin-left: 2%;
+        width: 60%;
+        height: 60px;
+        /* border: 1px solid black; */
+    } 
+    #information>img{
+        width: 100%;
+        height: 100%;
+        margin-top: 0%;
     }
     </style>
 </head>
@@ -160,40 +232,42 @@ font-family: sans-serif;
     <div id="top_nav">
 
             <img id="image_logo" src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC-Store-logo.jpg?143558" width="13%"  height="10%" alt="">
+
     
         <div id="information">
-            <img src="info.png" alt="">
+            <img src="shipping.png" alt="">
         </div>
         
     </div>
     <div id="lower_det">
         <div id="cart_left">
-            <p>Contact information</p><br>
-            <input id="width" class="eMail"type="text" placeholder="Email"> <br><br>
-            <input type="checkbox"> <div id="topmsg"><p>Keep me up to date on news and exclusive offers through all channels of communication, including WhatsApp. For more details click here</p></div> <br><br>
-            <p>Shipping address</p>
-           <select id="width"   name="Country/India">
-               <option value="">India</option>
-           </select><br><br>
-           <input id="name_info" type="text" placeholder="First name">
-           <input class="last" id="name_info" type="text" placeholder="Last name"><br><br>
-           <input id="width" class="userAdd" type="text" placeholder="Address"><br><br>
-           <input id="width" type="text" placeholder="Appartment"><br><br>
-           <input id="city_add" type="text" placeholder="City">
-           <input id="city_add"type="text" placeholder="State">
-           <input id="city_add"type="text" placeholder="Pin code"><br><br>
-           <div id="phone_info">In case we need to contact you about your order
+          <div id="payment_info">
+              <div id="data_user">
+              Contact  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; <span id="mail">akash@gmail.com</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;
+              <br><hr>
+              Ship to  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; <span id="add">lucknow Up,India</span>&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;
+              <br>
+              
+            </div>
+         
+          </div>
+          <br><br><br>
+          <p>Shipping method</p><br>
+          <div id="free_shipping">
+
+          <input type="radio">	Free Shipping
+          <a id="free_ship" href="">Free</a>
         </div>
-           <input id="widt" type="number" class="phno"placeholder="Phone"><i id="question" class="fas fa-question-circle"></i><br><br>
-           <input type="checkbox">	Save this information for next time <br><br>
-           <button id="button_shipping">Continue to shipping</button><br><br><br>
+
+          <br><br>
+          <button id="continueto_pay">Continue to payment</button><br><br><br><br><br><br><br><br><br><br><br><br>
            <hr><br>
     
 
            <div id="extra_item">
-            Refund &nbsp; &nbsp; Shipping policy &nbsp; &nbsp; Privacy policy &nbsp; &nbsp; Terms of service
+            Refund &nbsp; &nbsp; Shipping Policy &nbsp; &nbsp; Privacy Policy &nbsp; &nbsp; Terms of service
            </div>
-           <br><br><br>
+
         </div>
         <div id="cart_right">
             <div id="upper_right"></div>
@@ -203,11 +277,11 @@ font-family: sans-serif;
                 <button id="apply">Apply</button>
             <br><br><br>
                 <hr><br>
-                <p>Subtotal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ₹<span id="tot1">0.00</span></p>
+                <p>Subtotal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ₹<span id="tot1">0.00</span></p>
                 <p>Shipping  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Calculate At next step</p>
                 <hr>
-                <p>Total &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;     INR ₹<span2 id="tot2">0.00</span2></p>
-                <p>Your total saving &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; Rs.0.00  </p>
+                <p>Total &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    INR ₹<span2 id="tot2">0.00</p>
+                <p>Your total saving &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; Rs.0.00  </p>
             </div>
         </div>
        
@@ -215,14 +289,22 @@ font-family: sans-serif;
 </body>
 </html>
 <script>
-    document.getElementById("question").addEventListener("mouseover", ()=>{
-        document.getElementById("phone_info").style.display = "flex"
-    })
-    document.querySelector("body").addEventListener("mouseout",()=>{
-        document.getElementById("phone_info").style.display = "none"
+    // document.getElementById("question").addEventListener("mouseover", ()=>{
+    //     document.getElementById("phone_info").style.display = "flex"
+    // })
+    // document.querySelector("body").addEventListener("mouseout",()=>{
+    //     document.getElementById("phone_info").style.display = "none"
 
-    })
+    // })
+        document.getElementById("continueto_pay").onclick=()=>{
+            window.location.href="payments.html"
+        }
 
+        let useradd=JSON.parse(localStorage.getItem("user_add"));
+        document.getElementById("mail").textContent=useradd.email;
+        document.getElementById("add").textContent=useradd.add
+
+    //adding cart
 
     function addCart(){
     
@@ -329,22 +411,5 @@ document.querySelector("#tot2").textContent=total;
 }
 addCart();
 
-document.getElementById("button_shipping").onclick=()=>{
-    console.log(1)
-    let add=document.querySelector(".userAdd").value;
-    let email=document.querySelector(".eMail").value;
-    let phn=document.querySelector(".phno").value;
-    let userAdd={
-        email:email,
-        add:add,
-        ph:phn
-}
-localStorage.setItem("user_add",JSON.stringify(userAdd));
-    window.location.href="shipping.html";
-}
-
-document.getElementById("image_logo").onclick=()=>{
-    window.location.href="login_home.html";
-}
-
+    //
 </script>
