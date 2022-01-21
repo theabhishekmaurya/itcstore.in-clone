@@ -429,8 +429,8 @@
     <div id="quickSearch">
       <div id="insideQS">
         <h4>Quick Search</h4>
-        <button>Atta</button>
-        <button>Soaps</button>
+        <button id="food1">Foods</button>
+        <button id="pcare1">Personal Care</button>
         <button>Frozen Snacks</button>
         <button>Sanitizers</button>
         <button>Chocolates</button>
@@ -847,7 +847,12 @@
   document.querySelector("#personal_care").addEventListener("click",()=>{
     window.location.href="pcare_prod.html";
   })
-
+  document.querySelector("#pcare1").addEventListener("click",()=>{
+    window.location.href="pcare_prod.html";
+  })
+  document.querySelector("#food1").addEventListener("click",()=>{
+    window.location.href="pcare_prod.html";
+  })
   let name = JSON.parse(localStorage.getItem("user_name"));
   document.getElementById("login").textContent = "Hi, " + name.name;
   document.getElementById("login").addEventListener("click", () => {
