@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/cb6e07c0b2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./styles/navbar.css">
+        <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        #large{
+            width: 100%;
+            /* margin-top: 2%; */
+            /* border: 1px solid black; */
+            display: flex;
+            height: 1100px;
+        }
+        #left{
+            margin-left: 10%;
+            width: 18%;
+            /* border: 1px solid black; */
+            height: 500px;
+            margin-top: 5%;
+        }
+        #right{
+            margin-left: 4%;
+            width: 65%;
+            /* border: 1px solid  black; */
+            height: 1000px;
+         
+        }
+        #already{
+            /* border:1px solid red; */
+            height: 100%;
+            display: grid;
+            margin-top: 1%;
+            grid-gap: 6%;
+            overflow: scroll;
+            grid-template-columns: repeat(3,1fr);
+        }
+        body{
+            font-family: sans-serif;
+        }
+        #left>div{
+            margin-bottom: 1%;
+        }
+        #left>hr{
+            margin:4% 0%;
+            border-color: rgb(46, 44, 44)
+        }
+        #left>div>h3{
+            font-size: 15px;
+            font-weight: bold;
+            margin-left: 2%;
+        }
+
+        .class{
+            display: flex;
+        }
+        .fa-caret-down{
+            margin-top: 5%;
+        }
+        #script_div{
+            display: flex;
+        }
+        #box_div{
+            /* width: 35%; */
+            height: 85%;
+            margin-left:1%;
+            margin-top: 1%;
+            /* border: 1px solid black; */
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        #box_div>img{
+            height: 50%;
+            width: 100%;
+            padding: 1%;
+            border-radius: 10px;
+        }
+       #para{
+           margin-left: 4%;
+           margin-right: 4%;
+           /* border: 1px solid black; */
+           color: rgb(94, 112, 67);
+           margin-top: 0%;
+           margin-bottom: 0%;
+       }
+       #prc,#about,#rvw{
+           margin-left: 4%;
+       }
+       #prc{
+           margin-top: 1%;
+           font-size:20px;
+       }
+       #button{
+           width: 80%;
+           margin-left: 10%;
+           height: 7%;
+           background-color: #a2d605;
+           color: white;
+           border-radius: 15px;
+           cursor: pointer                ;
+       }
+       #sort{
+           margin-left: 80%;
+       }
+       #item_add{
+           margin-left: 25%;
+           width: 40%;
+           height: 100%;
+           border: 1px solid black;
+           display: flex;
+       }
+       #collector{
+           display: flex;
+            width: 100%;
+           height: 7%;
+           border: 1px  black;
+           
+       }
+        
+        @media only screen and (min-width: 375px) and (max-width: 768px) {
+       #left{
+           display: none;
+       }
+      #box_div{
+          height: 800px;
+      }
+      }
+
+      @media only screen and (min-width: 0px) and (max-width: 375px) {
+        #left{
+           display: none;
+       }
+      
+        }
+        #minus{
+            width: 30%;
+            height: 100%;
+            border-right: 1px solid black;
+        }
+        #number{
+            width: 40%;
+            height: 100%;
+            border-right: 1px solid black;
+        }
+        #plus,#minus_sign,#updated_count{
+            margin-top: 2%;
+            margin-left:10%;
+            cursor: pointer;
+            font-size: 22px;
+        }
+        #minus_sign,#updated_count{
+            margin-top: 3%;
+            margin-left: 25%;
+        }
+        #prod_car{
+            width: 100%;
+            height: 280px;
+            margin-top: 1%;
+            /* border: 1px solid red; */
+        }
+        #topCar{
+            height: 100%;
+            width: 80%;
+            margin:auto;
+            
+        }
+        .carousel-cell{
+            height: 100%;
+            width: 80%;
+        }
+        #footer_end{
+            /* border: 1px solid; */
+            height: 150px;
+        }
+        #about{
+            text-align: center;
+            font-size:12px;
+        }
+        #cartDiv{
+            width: 100%;
+            height: 700px;
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <navbar>
+
+    </navbar>
+    <div id="cartDiv">
+        <div id="main">
+            <div id="box1">
+                    <h2 id="text">My Cart</h2>
+                    <img id="can"
+                    height="28px"
+                    width="28px"
+                    src="https://cdn-icons.flaticon.com/png/128/4302/premium/4302064.png?token=exp=1642704555~hmac=74a94601077c9aa351feb14531ba7b2d"/>
+               
+            </div>
+            <div id="box2"></div>
+            <div id="box4">
+                <div id="subt">
+                     <div id="pro">
+                        <div id="p5">Sub Total </div>
+                     </div>
+                    
+                    <div id="pro1">
+                        Rs. <div id="p6">0.00</div>
+                    </div>
+                </div>
+                <div id="tol">
+                    <div id="nob">
+                        <div id="p7">Total</div>
+                    </div>
+                    <div id="nob1">
+                      Rs.  <div>0.00</div>
+                    </div>
+                </div>
+            </div>
+            <div id="box3">
+                <button id="ptc">Proceed To Checkout</button><br><br>
+                <div class="foot">
+                    <img
+                    height="20px"
+                    width="20px"
+                    src="https://cdn-icons-png.flaticon.com/128/709/709790.png"/>
+                    <div class="clr">Get a Free Delivery for orders of Rs750 & above</div>
+    
+                </div>
+                <div class="foot">
+                    <img
+                    height="20px"
+                    width="20px"
+                    src="https://cdn-icons.flaticon.com/png/128/3263/premium/3263394.png?token=exp=1642704611~hmac=785904341573d73f1da143533304103a"/>
+                    <div class="clr">10% Off on orders of Rs 2500 & above</div>
+                </div>
+               
+            </div>
+        </div>
+        
+    </div>
+    <div id="prod_car">
+        <div
+      id="topCar"
+      class="carousel"
+      data-flickity='{"wrapAround":true, "autoPlay": true, "imagesLoaded":true }'
+    >
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/B_Natural_banner1600pxX400px_a0518a75-b621-45c5-ae79-081386e7ab22.jpg?7056"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/2020_Sept_eStore_CurWeb_Sunfeast_yiPPee_Pasta_Noodles_Banner05.jpg?v=1604909403"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/WonderzMilk-DarkFantasy_3b991f06-6f35-4241-b251-a2e87a907f26.jpg?v=1616572169"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Home_-_Jelimals_-_Desktop.jpg?v=1621500035"
+        />
+      </div>
+    </div>
+    </div>
+    <div id="large">
+        <div id="left">
+        <div class="class"><i class="fas fa-caret-down"></i><h3>CATEGORIES</h3></div>
+          <input type="checkbox"> Aashirvaad Instant Mix<br>
+          <input type="checkbox"> Aashirvaad Instant Mixes<br>
+          <input type="checkbox"> Beverages<br>
+          <input type="checkbox"> Biscuits & Cakes<br>
+          <input type="checkbox"> Confectionery <br>
+          <input type="checkbox"> Frozen Food<br>
+          <input type="checkbox"> Noodles And Pasta
+          <hr>
+
+          <div class="class"><i class="fas fa-caret-down"></i><h3>BRAND</h3></div>
+          <input type="checkbox"> AASHIRVAAD ATTA <br>
+          <input type="checkbox"> AASHIRVAAD INSTANT MEALS<br>
+          <input type="checkbox"> AASHIRVAAD SPICES<br>
+          <input type="checkbox"> BINGO! TEDHE MEDHE<br>
+          <input type="checkbox"> CANDYMAN FANTASTIK<br>
+          <input type="checkbox"> AASHIRVAAD SALT<br>
+          <input type="checkbox">AASHIRVAAD INSTANT MIX)<br>
+          <input type="checkbox"> SUNFEAST BOUNCE)<br>
+          <hr>
+          <div class="class"><i class="fas fa-caret-down"></i><h3>PRODUCT TYPE</h3></div>
+          <input type="checkbox">Personal Care <br>
+          <hr>
+          <div class="class"><i class="fas fa-caret-down"></i><h3>PRICE</h3></div>
+          <input type="checkbox"> Under Rs. 21.00 <br>
+          <input type="checkbox"> Rs. 21.00 - Rs. 51.00 <br>
+          <input type="checkbox">  Rs. 51.00 - Rs. 101.00 <br>
+          <input type="checkbox"> Rs. 101.00 - Rs. 201.00 <br>
+          <input type="checkbox"> Above Rs. 201.00
+          <hr>
+          <div class="class"><i class="fas fa-caret-down"></i><h3>DISCOUNT</h3></div>
+          <input type="checkbox"> 20% - 30% <br>
+           <input type="checkbox"> 15% - 20%
+           <hr>
+           <!-- <div class="class"><i class="fas fa-caret-down"></i><h3>FOR</h3></div>
+           <input type="checkbox"> MALE <br>
+
+           <input type="checkbox"> FEMALE -->
+        </div>
+        <div id="right">
+            <div id="sort">
+                <p>SORT BY</p>
+             <select name="Date, New To Old" id="sortBy" >
+                 <option value="best_selling">Best Selling</option>
+                 <option value="l2h">Price, low to high</option>
+                 <option value="h2l">Price, high to low</option>
+                 <option value="a2z">Alphabetically A-Z</option>
+                 <option value="z2a">Alphabetically Z-A</option>
+               
+             </select>
+            </div>
+            <div id="already"></div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
+
+<script src="cart.js"></script>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    import footer2 from "./components/footer2.js";
+    document.querySelector("footer").innerHTML=footer2();
+    document.querySelector("navbar").innerHTML=navbar();
+    let name=JSON.parse(localStorage.getItem("user_name"));
+    document.querySelector("#login").textContent=name.name;
+
+    document.getElementById("logo").addEventListener("click", () => {
+    window.location.href = "login_home.html";
+  });
+        document.getElementById("can").onclick=()=>{
+        document.querySelector("#topCar").style.display="block";
+        document.querySelector("#cartDiv").style.display="none";
+      }
+
+  //personal care data
+
+  let food=[
+
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/40127506-2_a2aa23ab-7eee-4709-a0fe-537e4d69b6c5_275x275.jpg?v=1626185802",
+        name:"Aashirvaad Shudh Chakki Atta 5kg",
+        rating:"49 reviews",
+        price:193
+    },
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/29957_1_786d5248-1465-45cf-9329-aff61630ef56_275x275.jpg?v=1634620788",
+    name:"ITC Master Chef Hara Bhara Kebab 210g",
+    rating:"24 reviews",
+    price:117
+},
+
+
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/flatBOPMPATTA10KgChillioffer3Dpack18-12copy_275x275.jpg?v=1641391059",
+    name:"Aashirvaad Superior MP Atta, 10kg - Free 50g Chilli Powder",
+    rating:"No reviews",
+    price:490
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/FOP_Bingo_-Trail-Mix_200g_275x275.jpg?v=1640779332",
+    name:"Bingo Trail Mix",
+    rating:"No reviews",
+    price:375
+},
+
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/FOP_21c21f98-bbde-4336-83fc-48d49715c933_275x275.jpg?v=1640778352",
+    name:"Fabelle Heavenly Almond Mousse with Ghana Cocoa",
+    rating:"No reviews",
+    price:225
+},
+
+
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/11570632-Fantastik-2.5L-BOP-1000x1000_275x275.jpg?v=1638890246",
+    name:"CANDYMAN FANTASTIK 460G",
+    rating:"No reviews",
+    price:100
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/Hand-rolled-truffles-and-rochers-4x3_1_275X272.jpg?v=1638878204",
+    name:"Hand rolled Truffles & Rochers - 16 pcs",
+    rating:"No reviews",
+    price:1768.82
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/11658246-Bounce-fills-Orange-Carton-FOP-1000x1000_275x275.jpg?v=1637402446",
+    name:"Bounce Fills Orange Vanilla 300g",
+    rating:"No reviews",
+    price:75
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/11658246-Bounce-fills-Strawberry-Carton-FOP-1000x1000_275x275.jpg?v=1637387787",
+    name:"Bounce Fills Strawberry Vanilla 300g",
+    rating:"No reviews",
+    price:75
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/ATTA-10-Kg-NMP-offer-3D-27-10-21-Bop-flat-copy_275x275.jpg?v=1637323662",
+    name:"Aashirvaad Shudh Chakki Atta 10kg + 1 kg Shudh Chakki Atta Free",
+    rating:"No reviews",
+    price:390
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/BOP_2db8c239-c660-4b0c-873e-756bf16a31b4_275x275.jpg?v=1636543548",
+    name:"Fabelle Heart of Gold Collections 10s",
+    rating:"No reviews",
+    price:2100
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/FOP_dce66c9e-b676-43de-a5b7-b37ff968c259_275x275.jpg?v=1640758851",
+    name:"Fabelle Divine Dark 84% with Ghana Cocoa",
+    rating:"No reviews",
+    price:225
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/ASATTANNPPRM5KG_8901725117993_2_275x275.jpg?v=1636371883",
+    name:"Select Atta 5 kg + Set of 2 Roti Covers Free Promo",
+    rating:"No reviews",
+    price:315
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/Bingo_ChatarMatarPackaging_BOP_1_275x275.jpg?v=1637061317",
+    name:"Bingo! Tedhe Medhe Chatar Matar",
+    rating:"No reviews",
+    price:10
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/FOP-Primary_DF-Expressions_400g_8901725120184_275x275.jpg?v=1634113167",
+    name:"Dark Fantasy Expressions, 400g",
+    rating:"No reviews",
+    price:200
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/FOP-Primary_Vanilla-Fills_75g_8901725112660_275x275.jpg?v=1634111621",
+    name:"Sunfeast Dark Fantasy Vanilla Fills, 75g",
+    rating:"No reviews",
+    price:20
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/BOPPrimary_DFChocoFills_600g_8901725110833_275x275.jpg?v=1634110323",
+    name:"Sunfeast Dark Fantasy Choco Fills, 600g | Rs.280/-",
+    rating:"No reviews",
+    price:224
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/DF-CHNUTDIPPED100G_8901725116828_2_275x275.jpg?v=1640862809",
+    name:"Sunfeasy Dark Fantasy Desserts Choco nut dipped, 100g | Rs.50/-",
+    rating:"No reviews",
+    price:50
+},
+{
+    image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/The-Deluxe-Selection-by-Nutmeg--The-Gourmet-Shop-Image-2_275x275.jpg?v=1639140126",
+    name:"The Deluxe Selection",
+    rating:"No reviews",
+    price:7668.82
+},
+
+
+
+]
+
+  //personal care data end
+  display(food);
+  function display(array){
+    document.getElementById("already").innerHTML="";
+    array.map((elem)=>{
+        var already =  document.getElementById("already");
+        var box_div = document.createElement("div");
+        box_div.id = "box_div"
+        var count = 1;
+        var img = document.createElement("img")
+         img.src = elem.image
+         var para_div = document.createElement("div");
+         para_div.id = "para"
+         var head = document.createElement("p")
+         head.innerText = elem.name;        
+         var review = document.createElement("p")
+         review.id = "rvw"
+         review.innerText = "⭐⭐⭐ "+elem.rating;
+         var collector_div = document.createElement("div")
+         collector_div.id = "collector"
+         var rate = document.createElement("h3")
+         rate.id = "prc"
+         rate.innerText = "Rs. "+elem.price   
+         var item_add = document.createElement("div")
+         item_add.id = "item_add"
+         var minus = document.createElement("div")
+         minus.id = "minus"
+         var minus_sign = document.createElement("h2")
+         minus_sign.id = "minus_sign"
+         minus_sign.innerText = "−"   
+         var numbers = document.createElement("div")
+        numbers.id = "number"
+        var updated_count = document.createElement("h2")
+        updated_count.id= "updated_count"
+        updated_count.innerText = 1
+    
+       var plus = document.createElement("h2")
+       plus.id = "plus"
+       plus.innerText = "+"
+
+         minus_sign.onclick = ()=>{
+             if(count>0){
+                 count--
+             updated_count.innerText = count;
+             }
+             else{
+                updated_count.innerText = count; 
+             }
+         }
+         plus.onclick = ()=>{
+             count++
+             updated_count.innerText = count;
+         }
+     
+         var about = document.createElement("p")
+         about.innerText = "Price & availability may vary on your pin code."
+         about.id = "about"
+         var btn = document.createElement("button")
+         btn.innerText = "Add To Cart"
+         btn.id = "button"
+         btn.onclick =()=>{
+            let cart_item=JSON.parse(localStorage.getItem("cart_item")) || [];
+            console.log(cart_item);
+            let data={
+                image:elem.image,
+                quant:count,
+                price:elem.price,
+                name:elem.name
+            }
+            cart_item.push(data);
+            localStorage.setItem("cart_item",JSON.stringify(cart_item));
+            addCart();
+         }
+         para_div.append(head)
+         minus.append(minus_sign)
+         numbers.append(updated_count)
+         item_add.append(minus,numbers,plus)
+         collector_div.append(rate,item_add)
+         box_div.append(img,para_div,review,collector_div,about,btn)
+         already.append(box_div);
+    })
+  }
+
+    // sort fun start
+    document.getElementById("sortBy").onchange=()=>{
+        let change=document.getElementById("sortBy").value;
+        console.log(change);
+        sortFunction(food,change);
+    }
+    function sortFunction(array,val){
+        console.log(array);
+        if (val==="l2h"){
+
+            array.sort((a,b)=>{
+                return a.price - b.price;
+            })
+            display(array);
+        }
+        if(val==="h2l"){
+
+            array.sort((a,b)=>{
+                return b.price - a.price;
+            })
+            display(array);
+        }
+        if(val==="a2z"){
+            array.sort(function(a, b){
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0;
+            })
+            display(array);
+        }
+        if(val==="z2a"){
+            array.sort(function(a, b){
+                if(a.name < b.name) { return 1; }
+                if(a.name > b.name) { return -1; }
+                return 0;
+            })
+            display(array);
+        }
+    }
+
+    //sort fun end
+
+
+    document.getElementById("cart-logo").onclick=()=>{
+        document.querySelector("#prod_car").style.display="none";
+        document.querySelector("#cartDiv").style.display="block";
+    }
+    document.getElementById("main").onmouseout=()=>{
+        document.querySelector("#prod_car").style.display="block";
+        document.querySelector("#cartDiv").style.display="none";
+    }
+    document.getElementById("main").onmouseover=()=>{
+        document.querySelector("#prod_car").style.display="none";
+        document.querySelector("#cartDiv").style.display="block";
+    } 
+    document.getElementById("ptc").onclick=()=>{
+      window.location.href="checkout.html";
+    }
+
+    document.getElementById("foods").onclick=()=>{
+      window.location.href="food_prod.html";
+    }
+
+    document.getElementById("personal_care").onclick=()=>{
+      window.location.href="pcare_prod.html";
+    }
+
+    document.getElementById("home").onclick=()=>{
+      window.location.href="login_home.html";
+    }
+</script>

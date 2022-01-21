@@ -328,12 +328,12 @@
         <div id="right">
             <div id="sort">
                 <p>SORT BY</p>
-             <select name="Date, New To Old" id="">
-                 <option value="Best Selling">Best Selling</option>
-                 <option value="Price, high to low">Price, low to high</option>
-                 <option value="Alphabetically A-Z">Price, high to low</option>
-                 <option value="Alphabetically Z-A">Alphabetically A-Z</option>
-                 <option value="Price, low to high">Alphabetically Z-A</option>
+             <select name="Date, New To Old" id="sortBy">
+                <option value="best_selling">Best Selling</option>
+                <option value="l2h">Price, low to high</option>
+                <option value="h2l">Price, high to low</option>
+                <option value="a2z">Alphabetically A-Z</option>
+                <option value="z2a">Alphabetically Z-A</option>
                
              </select>
             </div>
@@ -358,7 +358,10 @@
     document.getElementById("logo").addEventListener("click", () => {
     window.location.href = "login_home.html";
   });
-
+        document.getElementById("can").onclick=()=>{
+        document.querySelector("#topCar").style.display="block";
+        document.querySelector("#cartDiv").style.display="none";
+      }
 
   //personal care data
 
@@ -511,84 +514,131 @@
 
 
   //personal care data end
-  pcProd.map((elem)=>{
-        var already =  document.getElementById("already");
-        var box_div = document.createElement("div");
-        box_div.id = "box_div"
-        var count = 1;
-        var img = document.createElement("img")
-         img.src = elem.image
-         var para_div = document.createElement("div");
-         para_div.id = "para"
-         var head = document.createElement("p")
-         head.innerText = elem.name;        
-         var review = document.createElement("p")
-         review.id = "rvw"
-         review.innerText = "⭐⭐⭐ "+elem.rating;
-         var collector_div = document.createElement("div")
-         collector_div.id = "collector"
-         var rate = document.createElement("h3")
-         rate.id = "prc"
-         rate.innerText = "Rs. "+elem.price   
-         var item_add = document.createElement("div")
-         item_add.id = "item_add"
-         var minus = document.createElement("div")
-         minus.id = "minus"
-         var minus_sign = document.createElement("h2")
-         minus_sign.id = "minus_sign"
-         minus_sign.innerText = "−"   
-         var numbers = document.createElement("div")
-        numbers.id = "number"
-        var updated_count = document.createElement("h2")
-        updated_count.id= "updated_count"
-        updated_count.innerText = 1
+  display(pcProd);
+  function display(array){
+    document.getElementById("already").innerHTML="";
+      array.map((elem)=>{
+            var already =  document.getElementById("already");
+            var box_div = document.createElement("div");
+            box_div.id = "box_div"
+            var count = 1;
+            var img = document.createElement("img")
+             img.src = elem.image
+             var para_div = document.createElement("div");
+             para_div.id = "para"
+             var head = document.createElement("p")
+             head.innerText = elem.name;        
+             var review = document.createElement("p")
+             review.id = "rvw"
+             review.innerText = "⭐⭐⭐ "+elem.rating;
+             var collector_div = document.createElement("div")
+             collector_div.id = "collector"
+             var rate = document.createElement("h3")
+             rate.id = "prc"
+             rate.innerText = "Rs. "+elem.price   
+             var item_add = document.createElement("div")
+             item_add.id = "item_add"
+             var minus = document.createElement("div")
+             minus.id = "minus"
+             var minus_sign = document.createElement("h2")
+             minus_sign.id = "minus_sign"
+             minus_sign.innerText = "−"   
+             var numbers = document.createElement("div")
+            numbers.id = "number"
+            var updated_count = document.createElement("h2")
+            updated_count.id= "updated_count"
+            updated_count.innerText = 1
+        
+           var plus = document.createElement("h2")
+           plus.id = "plus"
+           plus.innerText = "+"
     
-       var plus = document.createElement("h2")
-       plus.id = "plus"
-       plus.innerText = "+"
-
-         minus_sign.onclick = ()=>{
-             if(count>0){
-                 count--
-             updated_count.innerText = count;
+             minus_sign.onclick = ()=>{
+                 if(count>0){
+                     count--
+                 updated_count.innerText = count;
+                 }
+                 else{
+                    updated_count.innerText = count; 
+                 }
              }
-             else{
-                updated_count.innerText = count; 
+             plus.onclick = ()=>{
+                 count++
+                 updated_count.innerText = count;
              }
-         }
-         plus.onclick = ()=>{
-             count++
-             updated_count.innerText = count;
-         }
-     
-         var about = document.createElement("p")
-         about.innerText = "Price & availability may vary on your pin code."
-         about.id = "about"
-         var btn = document.createElement("button")
-         btn.innerText = "Add To Cart"
-         btn.id = "button"
-         btn.onclick =()=>{
-            let cart_item=JSON.parse(localStorage.getItem("cart_item")) || [];
-            console.log(cart_item);
-            let data={
-                image:elem.image,
-                quant:count,
-                price:elem.price,
-                name:elem.name
-            }
-            cart_item.push(data);
-            localStorage.setItem("cart_item",JSON.stringify(cart_item));
-            addCart();
-         }
-         para_div.append(head)
-         minus.append(minus_sign)
-         numbers.append(updated_count)
-         item_add.append(minus,numbers,plus)
-         collector_div.append(rate,item_add)
-         box_div.append(img,para_div,review,collector_div,about,btn)
-         already.append(box_div);
-    })
+         
+             var about = document.createElement("p")
+             about.innerText = "Price & availability may vary on your pin code."
+             about.id = "about"
+             var btn = document.createElement("button")
+             btn.innerText = "Add To Cart"
+             btn.id = "button"
+             btn.onclick =()=>{
+                let cart_item=JSON.parse(localStorage.getItem("cart_item")) || [];
+                console.log(cart_item);
+                let data={
+                    image:elem.image,
+                    quant:count,
+                    price:elem.price,
+                    name:elem.name
+                }
+                cart_item.push(data);
+                localStorage.setItem("cart_item",JSON.stringify(cart_item));
+                addCart();
+             }
+             para_div.append(head)
+             minus.append(minus_sign)
+             numbers.append(updated_count)
+             item_add.append(minus,numbers,plus)
+             collector_div.append(rate,item_add)
+             box_div.append(img,para_div,review,collector_div,about,btn)
+             already.append(box_div);
+        })
+  }
 
+    //sort function start
+
+    document.getElementById("sortBy").onchange=()=>{
+        let change=document.getElementById("sortBy").value;
+        console.log(change);
+        sortFunction(pcProd,change);
+    }
+    function sortFunction(array,val){
+        console.log(array);
+        if (val==="l2h"){
+
+            array.sort((a,b)=>{
+                return a.price - b.price;
+            })
+            display(array);
+        }
+        if(val==="h2l"){
+
+            array.sort((a,b)=>{
+                return b.price - a.price;
+            })
+            display(array);
+        }
+        if(val==="a2z"){
+            array.sort(function(a, b){
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0;
+            })
+            display(array);
+        }
+        if(val==="z2a"){
+            array.sort(function(a, b){
+                if(a.name < b.name) { return 1; }
+                if(a.name > b.name) { return -1; }
+                return 0;
+            })
+            display(array);
+        }
+        
+    }
+
+    //
     document.getElementById("cart-logo").onclick=()=>{
         document.querySelector("#prod_car").style.display="none";
         document.querySelector("#cartDiv").style.display="block";
@@ -603,5 +653,17 @@
     } 
     document.getElementById("ptc").onclick=()=>{
       window.location.href="checkout.html";
+    }
+
+    document.getElementById("foods").onclick=()=>{
+      window.location.href="food_prod.html";
+    }
+
+    document.getElementById("personal_care").onclick=()=>{
+      window.location.href="pcare_prod.html";
+    }
+
+    document.getElementById("home").onclick=()=>{
+      window.location.href="login_home.html";
     }
 </script>
