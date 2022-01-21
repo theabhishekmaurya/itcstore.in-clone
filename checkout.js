@@ -24,7 +24,7 @@ function checkOut(){
         let div3= document.createElement("div");
         div3.setAttribute("id","mid2");
         let img3=document.createElement("img");
-        img3.src="https://cdn-icons.flaticon.com/png/128/3941/premium/3941860.png?token=exp=1642703740~hmac=8d5ec69fc968c553222e0bbb962cba93";
+        img3.src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/2x/external-remove-interface-dreamstale-lineal-dreamstale.png";
         img3.style.height="20px";
         img3.style.width="20px";
         img3.style.marginLeft="29px";
@@ -42,7 +42,7 @@ function checkOut(){
         img4.style.marginTop="15px";
     
         let img5=document.createElement("img");
-        img5.src="https://cdn-icons.flaticon.com/png/128/2732/premium/2732657.png?token=exp=1642703822~hmac=dbf08188166b6ecc76acf5aa2e5c4b6e";
+        img5.src="https://img.icons8.com/ios-glyphs/2x/multiply.png";
         img5.style.height="14px";
         img5.style.width="14px";
         img5.style.marginLeft="8px";
@@ -65,7 +65,7 @@ function checkOut(){
     
         let img6=document.createElement("img");
         img6.id="delIcon"
-        img6.src=" https://cdn-icons.flaticon.com/png/128/484/premium/484560.png?token=exp=1642703229~hmac=c93f0611375c8c1eb72d930d29d77bbc";
+        img6.src=" https://img.icons8.com/carbon-copy/2x/filled-trash.png";
         img6.style.height="25px";
         img6.style.width="25px";
         img6.style.marginLeft="60px";
