@@ -42,7 +42,7 @@ function addCart(){
         let div5 = document.createElement("div");
         div5.setAttribute("id","value");
         let img3=document.createElement("img");
-        img3.src="https://cdn-icons.flaticon.com/png/128/3941/premium/3941860.png?token=exp=1642703740~hmac=8d5ec69fc968c553222e0bbb962cba93";
+        img3.src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/2x/external-remove-interface-dreamstale-lineal-dreamstale.png";
         img3.style.height="25px";
         img3.style.width="25px";
         let p1 = document.createElement("div");
