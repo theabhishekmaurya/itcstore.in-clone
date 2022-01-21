@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/cb6e07c0b2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./styles/navbar.css">
+        <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        #large{
+            width: 100%;
+            /* margin-top: 2%; */
+            /* border: 1px solid black; */
+            display: flex;
+            height: 1100px;
+        }
+        #left{
+            margin-left: 10%;
+            width: 18%;
+            /* border: 1px solid black; */
+            height: 500px;
+            margin-top: 5%;
+        }
+        #right{
+            margin-left: 4%;
+            width: 65%;
+            /* border: 1px solid  black; */
+            height: 1000px;
+         
+        }
+        #already{
+            /* border:1px solid red; */
+            height: 100%;
+            display: grid;
+            margin-top: 1%;
+            grid-gap: 6%;
+            overflow: scroll;
+            grid-template-columns: repeat(3,1fr);
+        }
+        body{
+            font-family: sans-serif;
+        }
+        #left>div{
+            margin-bottom: 1%;
+        }
+        #left>hr{
+            margin:4% 0%;
+            border-color: rgb(46, 44, 44)
+        }
+        #left>div>h3{
+            font-size: 15px;
+            font-weight: bold;
+            margin-left: 2%;
+        }
+        #left>input{
+        }
+        .class{
+            display: flex;
+        }
+        .fa-caret-down{
+            margin-top: 5%;
+        }
+        #script_div{
+            display: flex;
+        }
+        #box_div{
+            /* width: 35%; */
+            height: 85%;
+            margin-left:1%;
+            margin-top: 1%;
+            /* border: 1px solid black; */
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        #box_div>img{
+            height: 45%;
+            width: 100%;
+            padding: 1%;
+            border-radius: 10px;
+        }
+       #para{
+           margin-left: 4%;
+           margin-right: 4%;
+           /* border: 1px solid black; */
+           color: rgb(94, 112, 67);
+           margin-top: 0%;
+           margin-bottom: 0%;
+       }
+       #prc,#about,#rvw{
+           margin-left: 4%;
+       }
+       #prc{
+           margin-top: 1%;
+           font-size:20px;
+       }
+       #button{
+           width: 80%;
+           margin-left: 10%;
+           height: 7%;
+           background-color: #a2d605;
+           color: white;
+           border-radius: 15px;
+           cursor: pointer                ;
+       }
+       #sort{
+           margin-left: 80%;
+       }
+       #item_add{
+           margin-left: 25%;
+           width: 40%;
+           height: 100%;
+           border: 1px solid black;
+           display: flex;
+       }
+       #collector{
+           display: flex;
+            width: 100%;
+           height: 7%;
+           border: 1px  black;
+           
+       }
+        
+        @media only screen and (min-width: 375px) and (max-width: 768px) {
+       #left{
+           display: none;
+       }
+      #box_div{
+          height: 800px;
+      }
+      }
+
+      @media only screen and (min-width: 0px) and (max-width: 375px) {
+        #left{
+           display: none;
+       }
+      
+        }
+        #minus{
+            width: 30%;
+            height: 100%;
+            border-right: 1px solid black;
+        }
+        #number{
+            width: 40%;
+            height: 100%;
+            border-right: 1px solid black;
+        }
+        #plus,#minus_sign,#updated_count{
+            margin-top: 2%;
+            margin-left:10%;
+            cursor: pointer;
+            font-size: 22px;
+        }
+        #minus_sign,#updated_count{
+            margin-top: 3%;
+            margin-left: 25%;
+        }
+        #prod_car{
+            width: 100%;
+            height: 280px;
+            margin-top: 1%;
+            /* border: 1px solid red; */
+        }
+        #topCar{
+            height: 100%;
+            width: 80%;
+            margin:auto;
+            
+        }
+        .carousel-cell{
+            height: 100%;
+            width: 80%;
+        }
+        #footer_end{
+            /* border: 1px solid; */
+            height: 150px;
+        }
+        #about{
+            text-align: center;
+            font-size:12px;
+        }
+        #cartDiv{
+            width: 100%;
+            height: 700px;
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <navbar>
+
+    </navbar>
+    <div id="cartDiv">
+        <div id="main">
+            <div id="box1">
+                    <h2 id="text">My Cart</h2>
+                    <img id="can"
+                    height="28px"
+                    width="28px"
+                    src="https://cdn-icons.flaticon.com/png/128/4302/premium/4302064.png?token=exp=1642704555~hmac=74a94601077c9aa351feb14531ba7b2d"/>
+               
+            </div>
+            <div id="box2"></div>
+            <div id="box4">
+                <div id="subt">
+                     <div id="pro">
+                        <div id="p5">Sub Total </div>
+                     </div>
+                    
+                    <div id="pro1">
+                        Rs. <div id="p6">0.00</div>
+                    </div>
+                </div>
+                <div id="tol">
+                    <div id="nob">
+                        <div id="p7">Total</div>
+                    </div>
+                    <div id="nob1">
+                      Rs.  <div>0.00</div>
+                    </div>
+                </div>
+            </div>
+            <div id="box3">
+                <button id="ptc">Proceed To Checkout</button><br><br>
+                <div class="foot">
+                    <img
+                    height="20px"
+                    width="20px"
+                    src="https://cdn-icons-png.flaticon.com/128/709/709790.png"/>
+                    <div class="clr">Get a Free Delivery for orders of Rs750 & above</div>
+    
+                </div>
+                <div class="foot">
+                    <img
+                    height="20px"
+                    width="20px"
+                    src="https://cdn-icons.flaticon.com/png/128/3263/premium/3263394.png?token=exp=1642704611~hmac=785904341573d73f1da143533304103a"/>
+                    <div class="clr">10% Off on orders of Rs 2500 & above</div>
+                </div>
+               
+            </div>
+        </div>
+        
+    </div>
+    <div id="prod_car">
+        <div
+      id="topCar"
+      class="carousel"
+      data-flickity='{"wrapAround":true, "autoPlay": true, "imagesLoaded":true }'
+    >
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Fiama-Desktop-banner_5f8d23d7-ca90-4137-9c27-74f661f4f812.jpg?7459"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/All_Bodywash_-_1348X324_c942267a-6833-49e1-a000-d7442cc0dade.png?17905"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Nimyle.jpg?17904"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Banner-1_5e22f852-7482-41cf-ab43-71ced537eefb.jpg?9659"
+        />
+      </div>
+    </div>
+    </div>
+    <div id="large">
+        <div id="left">
+        <div class="class"><i class="fas fa-caret-down"></i><h3>CATEGORIES</h3></div>
+          <input type="checkbox"> Engage Deodorant<br>
+          <input type="checkbox"> Engage Perfume Spray<br>
+          <input type="checkbox"> Essenza Di Wills Luxury Deodorant<br>
+          <input type="checkbox"> Essenza Di Wills Luxury Perfume<br>
+          <input type="checkbox"> Fiama (Body Wash & Shower Gel) <br>
+          <input type="checkbox"> Nimeasy Dishwash Liquid<br>
+          <input type="checkbox"> Vegetable & Fruit Wash
+          <hr>
+          <div class="class"><i class="fas fa-caret-down"></i><h3>BRAND</h3></div>
+          <input type="checkbox"> Charmis <br>
+          <input type="checkbox"> Dermafique<br>
+          <input type="checkbox"> Engage<br>
+          <input type="checkbox"> Essenza Di Wills (Bathing Bar)<br>
+          <input type="checkbox"> Essenza Di Wills (Fragrance)<br>
+          <input type="checkbox"> Fiama<br>
+          <input type="checkbox"> Fiama (Body Oil)<br>
+          <input type="checkbox"> Fiama (Body Wash & Shower Gel)<br>
+          <hr>
+          <div class="class"><i class="fas fa-caret-down"></i><h3>PRODUCT TYPE</h3></div>
+          <input type="checkbox">Personal Care <br>
+          <hr>
+          <div class="class"><i class="fas fa-caret-down"></i><h3>PRICE</h3></div>
+          <input type="checkbox"> Under Rs. 21.00 <br>
+          <input type="checkbox"> Rs. 21.00 - Rs. 51.00 <br>
+          <input type="checkbox">  Rs. 51.00 - Rs. 101.00 <br>
+          <input type="checkbox"> Rs. 101.00 - Rs. 201.00 <br>
+          <input type="checkbox"> Above Rs. 201.00
+          <hr>
+          <div class="class"><i class="fas fa-caret-down"></i><h3>DISCOUNT</h3></div>
+          <input type="checkbox"> 20% - 30% <br>
+           <input type="checkbox"> 15% - 20%
+           <hr>
+           <div class="class"><i class="fas fa-caret-down"></i><h3>FOR</h3></div>
+           <input type="checkbox"> MALE <br>
+
+           <input type="checkbox"> FEMALE
+        </div>
+        <div id="right">
+            <div id="sort">
+                <p>SORT BY</p>
+             <select name="Date, New To Old" id="">
+                 <option value="Best Selling">Best Selling</option>
+                 <option value="Price, high to low">Price, low to high</option>
+                 <option value="Alphabetically A-Z">Price, high to low</option>
+                 <option value="Alphabetically Z-A">Alphabetically A-Z</option>
+                 <option value="Price, low to high">Alphabetically Z-A</option>
+               
+             </select>
+            </div>
+            <div id="already"></div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
+
+<script src="cart.js"></script>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    import footer2 from "./components/footer2.js";
+    document.querySelector("footer").innerHTML=footer2();
+    document.querySelector("navbar").innerHTML=navbar();
+    let name=JSON.parse(localStorage.getItem("user_name"));
+    document.querySelector("#login").textContent=name.name;
+
+    document.getElementById("logo").addEventListener("click", () => {
+    window.location.href = "login_home.html";
+  });
+
+
+  //personal care data
+
+  var pcProd=[
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/SavlonHexa_Soap_75gx4_Back_abb5c958-1344-4189-9d69-cf3098e7beb8_275x275.jpg?v=1615536345",
+        name:"Savlon Cool Hexa Bathing Soap Bar with Instant Cool Feeling (Buy 3 Get 1 -75g each)",
+        rating:"5 reviews",
+        price:105
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/8905110004622_2_275x275.jpg?v=1635573934",
+        name:"Charmis Daily Nourishing Soft Cream with Vitamin C, Saffron Extracts and SPF 30 for glowing",
+        rating:"No reviews",
+        price:349
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/MegaCelebrationpack_1_275x275.jpg?v=1637218469",
+        name:"Fiama Gel Bathing Bar Mega Celebration pack, with 8 unique gel bars, with skin conditioners",
+        rating:"No reviews",
+        price:420
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/1_b1141b63-78b7-48bf-801c-6904f8e8c778_275x275.jpg?v=1635317377",
+        name:"Fiama Gel Bathing Bar Fresh Celebration pack, with 3 unique gel bars, with skin conditioners",
+        rating:"No reviews",
+        price:167
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/Aloe_Cartn_Rs10_275X272.jpg?v=1635258783",
+        name:"Vivel Aloe Vera Soap,Satin Soft Skin with Vitamin E,45g",
+        rating:"No reviews",
+        price:10
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_9aa35680-3f20-4600-840c-9e0c126d4c86_275x275.jpg?v=1639812016",
+        name:"Vivel Aloe Vera Soap, Satin Soft Skin with Vitamin E, 50g",
+        rating:"No reviews",
+        price:10
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2.-NEW-KV_0724c7f4-1959-48f5-841f-a196b1b4ffef_275x275.jpg?v=1628666131",
+        name:"Savlon Mask (Grey colour with adjustable ear-loops) Pack of 4",
+        rating:"No reviews",
+        price:288
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2.-NEW-KV_275x275.jpg?v=1628665484",
+        name:"Savlon Mask (Grey colour with adjustable ear-loops) Single Pack",
+        rating:"No reviews",
+        price:95
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/1_4e48e328-2136-4a31-afcc-b7f2823af28d_275x275.jpg?v=1637227514",
+        name:"Fiama Shower Gel Blackcurrant & Bearberry Body Wash with Skin Conditioners for Radiant Glow,",
+        rating:"No reviews",
+        price:524
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/NENDSP450_1_1_275x275.jpg?v=1628918746",
+        name:"Nimeasy Natural Disinfectant & Power Cleaner Spray 450 ml",
+        rating:"No reviews",
+        price:131
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_dff008cf-3aea-4009-9f8f-a1bd8c376f01_275x275.jpg?v=1623314292",
+        name:"Nimwash Vegetable & Fruit Wash Spray 150 ml, 100% Natural Action, Removes Pesticides &",
+        rating:"2 reviews",
+        price:30
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/02_d891ba0a-74ce-42f1-9c3f-0117abdd8811_275x275.jpg?v=1622441914",
+        name:"Essenza Di Wills Mikkel Verde EDT luxury perfume for Men, 75ml",
+        rating:"No reviews",
+        price:3485
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_2c25398c-02cd-4572-aab5-f4829c5269f1_275x275.jpg?v=1622290589",
+        name:"Engage Perfume Spray W6 for Women, 160ml",
+        rating:"No reviews",
+        price:209
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_cc5322c8-0dd4-4ec7-a2c5-759aa9626725_275x275.jpg?v=1622289254",
+        name:"Engage Perfume Spray W5 for Women, 160ml30% OFF",
+        rating:"No reviews",
+        price:209
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_d5dd87a9-98b0-4368-a729-42ca702ac89a_275x275.jpg?v=1622275316",
+        name:"Essenza Di Wills Inizio Homme Aqua EDT for Men, 50ml",
+        rating:"1 reviews",
+        price:2419
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/02_87fa0ea8-b132-4a54-97fe-c1344c348cf1_275x275.jpg?v=1622201092",
+        name:"Essenza Di Wills Ignite EDT for Women, 60ml",
+        rating:"No reviews",
+        price:3239
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/B075V8SV8S.PT01_11ccbeda-ecdd-4980-9b75-c5de375596dd_275x275.jpg?v=1622199810",
+        name:"Essenza Di Wills Ignite Fleur EDT for Women, 60ml",
+        rating:"No reviews",
+        price:3239
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_cab82a1f-f388-4df2-ae1d-f3ddff81fcdf_275x275.jpg?v=1621230835",
+        name:"Nimyle Floor cleaner with Power of Neem and freshness of Lemongrass 2L",
+        rating:"No reviews",
+        price:264
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_a9dabb10-5d27-4166-8ee5-e6a719bb1c54_275x275.jpg?v=1636457369",
+        name:"Savlon Laundry Disinfectant & Refreshing Liquid 1000ml",
+        rating:"12 reviews",
+        price:254
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/2_90415430-5910-455d-ac0f-5997bf4882db_275x275.jpg?v=1636457270",
+        name:"Savlon Laundry Disinfectant & Refreshing Liquid 500ml, After Detergent Wash,Kills 99.9%",
+        rating:"5 reviews",
+        price:149
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/SVMSSM1_2_45fdf138-6eda-40b6-b0ce-211a9d5ca2a8_275x275.jpg?v=1622534194",
+        name:"Savlon Mask - Small, Singles Pack, BIS Certified FFP2 S Mask (comparable to N95), Ear-",
+        rating:"7 reviews",
+        price:95
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/500ml_7_275x275.jpg?v=1619762834",
+        name:"Nimeasy Dishwash Liquid Gel 500ml, Kitchen Utensil Cleaner, Lift Off Action with Enzyme",
+        rating:"2 reviews",
+        price:100
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/PDFCR0006-image-7_d6dbaba7-7a5e-47ba-9f59-6d2da0f4607e_275x275.jpg?v=1617615239",
+        name:"Dermafique Skin Tone Perfector, White, 50g",
+        rating:"No reviews",
+        price:579
+    },
+    {
+        image:"https://cdn.shopify.com/s/files/1/0173/7644/4470/products/VVLOTUS100_BOP_4c315cea-4f14-437d-86ab-850b4c0e6eff_275x275.jpg?v=1617605237",
+        name:"Vivel Lotus Oil Soap, Soft Glowing Skin with Vitamin E 100g",
+        rating:"3 reviews",
+        price:25
+    },
+]
+
+
+  //personal care data end
+  pcProd.map((elem)=>{
+        var already =  document.getElementById("already");
+        var box_div = document.createElement("div");
+        box_div.id = "box_div"
+        var count = 1;
+        var img = document.createElement("img")
+         img.src = elem.image
+         var para_div = document.createElement("div");
+         para_div.id = "para"
+         var head = document.createElement("p")
+         head.innerText = elem.name;        
+         var review = document.createElement("p")
+         review.id = "rvw"
+         review.innerText = "⭐⭐⭐ "+elem.rating;
+         var collector_div = document.createElement("div")
+         collector_div.id = "collector"
+         var rate = document.createElement("h3")
+         rate.id = "prc"
+         rate.innerText = "Rs. "+elem.price   
+         var item_add = document.createElement("div")
+         item_add.id = "item_add"
+         var minus = document.createElement("div")
+         minus.id = "minus"
+         var minus_sign = document.createElement("h2")
+         minus_sign.id = "minus_sign"
+         minus_sign.innerText = "−"   
+         var numbers = document.createElement("div")
+        numbers.id = "number"
+        var updated_count = document.createElement("h2")
+        updated_count.id= "updated_count"
+        updated_count.innerText = 1
+    
+       var plus = document.createElement("h2")
+       plus.id = "plus"
+       plus.innerText = "+"
+
+         minus_sign.onclick = ()=>{
+             if(count>0){
+                 count--
+             updated_count.innerText = count;
+             }
+             else{
+                updated_count.innerText = count; 
+             }
+         }
+         plus.onclick = ()=>{
+             count++
+             updated_count.innerText = count;
+         }
+     
+         var about = document.createElement("p")
+         about.innerText = "Price & availability may vary on your pin code."
+         about.id = "about"
+         var btn = document.createElement("button")
+         btn.innerText = "Add To Cart"
+         btn.id = "button"
+         btn.onclick =()=>{
+            let cart_item=JSON.parse(localStorage.getItem("cart_item")) || [];
+            console.log(cart_item);
+            let data={
+                image:elem.image,
+                quant:count,
+                price:elem.price,
+                name:elem.name
+            }
+            cart_item.push(data);
+            localStorage.setItem("cart_item",JSON.stringify(cart_item));
+            addCart();
+         }
+         para_div.append(head)
+         minus.append(minus_sign)
+         numbers.append(updated_count)
+         item_add.append(minus,numbers,plus)
+         collector_div.append(rate,item_add)
+         box_div.append(img,para_div,review,collector_div,about,btn)
+         already.append(box_div);
+    })
+
+    document.getElementById("cart-logo").onclick=()=>{
+        document.querySelector("#prod_car").style.display="none";
+        document.querySelector("#cartDiv").style.display="block";
+    }
+    document.getElementById("main").onmouseout=()=>{
+        document.querySelector("#prod_car").style.display="block";
+        document.querySelector("#cartDiv").style.display="none";
+    }
+    document.getElementById("main").onmouseover=()=>{
+        document.querySelector("#prod_car").style.display="none";
+        document.querySelector("#cartDiv").style.display="block";
+    } 
+    document.getElementById("ptc").onclick=()=>{
+      window.location.href="checkout.html";
+    }
+</script>

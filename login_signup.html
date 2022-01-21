@@ -145,8 +145,9 @@
   document.querySelector("#signupbtn>button").addEventListener("click",()=>{
       addUser();
   });
-        async function addUser(){
-
+          function addUser(){
+            let uData=JSON.parse(localStorage.getItem("user")) || [];
+                console.log(uData);
             let fname=document.getElementById("fname").value;
             let lname=document.getElementById("lname").value;
             let num=document.getElementById("num").value;
@@ -157,8 +158,8 @@
             }
             else{
                 
-                let userData=await fetch("http://127.0.0.1:3000/api/users");
-                let uData=await userData.json();
+                let uData=JSON.parse(localStorage.getItem("user")) || [];
+                console.log(uData);
                 var count2=0;
                 uData.map((elem)=>{
                     if(elem.id==email){
@@ -176,29 +177,30 @@
                         password:pass
                         
                     }
-                    data=JSON.stringify(data);
-                    console.log(data)
-                    let res=await fetch("http://127.0.0.1:3000/api/users",{
-                        method:'POST',
-                        body:data,
-                        headers:{
-                            "Content-Type":"application/json"
-                        }
-                    });
+                    uData.push(data);
+                    uData=JSON.stringify(uData);
+                    console.log(uData)
+                    // let res=await fetch("http://127.0.0.1:3000/api/users",{
+                    //     method:'POST',
+                    //     body:data,
+                    //     headers:{
+                    //         "Content-Type":"application/json"
+                    //     }
+                    // });
+                    localStorage.setItem("user",uData);
                     alert("Signup Successful !")
                 }
                 }
             console.log(1);
         }
 
-        document.querySelector("#loginBtn").addEventListener("click",()=>{
-            
+        document.querySelector("#loginBtn").addEventListener("click",()=>{  
             getUser();
         });
 
-        async function getUser(){
-            let res=await fetch("http://127.0.0.1:3000/api/users");
-            let data=await res.json();
+        function getUser(){
+            // let res=await fetch("http://127.0.0.1:3000/api/users");
+            let data=JSON.parse(localStorage.getItem("user")) || [];
             console.log(data);
             let email=document.getElementById("loginEmail").value;
             let pass=document.getElementById("loginPass").value;
@@ -211,7 +213,13 @@
                 data.map((elem)=>{
                     if(elem.id==email){
                         if(elem.password==pass){
+                            let user={
+                              name:elem.firstname
+                            }
+                            console.log(elem.firstname);
+                            localStorage.setItem("user_name",JSON.stringify(user));
                             alert("Login Successful");
+                            window.location.href="login_home.html"
                         }
                         else{
                             alert("Wrong Password");

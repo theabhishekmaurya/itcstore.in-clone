@@ -1,0 +1,183 @@
+ #main{
+    height:650px;
+    width:500px;
+   margin-left: 64%;
+   justify-content: end;
+  /* border: 1px solid; */
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+} 
+#delIcon{
+    margin-top: 2%;
+}
+body{
+    margin:0px;
+}
+#can{
+    margin:10px;
+}
+#ptc:hover{
+    cursor: pointer;
+}
+#ptc{
+    height:50px;
+    width:88%;
+    margin-left: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    border:none;
+    background-color:#a2d605;
+    color:white;
+}
+
+#box1{
+    display: flex;
+    height:57px;
+    width:100%;
+    border-radius: 4px;
+    color:white;
+    justify-content: space-between;
+    background-color: #474952;
+}
+#box3{
+    height:200px;
+    width:100%;
+   
+}
+#p7{
+font-size:23px;
+font-Weight:bolder;
+}
+#pro{
+   
+    height:100%;
+    width:77%;
+
+
+}
+#pro1{
+   
+    display: flex;
+    color:#9c9c9c ;
+    text-align: center;
+    height:100%;
+    width:23%;
+    font-size: 22px;
+}
+#nob{
+   
+    height:100%;
+    width:72%;
+}
+#nob1{
+    display: flex;
+    height:100%;
+    width:25%;
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+#subt{
+   
+    display:flex;
+    height:35px;
+    width:95%;
+    margin-top: 9px;
+    margin-left: 10px;
+
+}
+  
+
+#p5{
+    font-size: 20px;
+    color: #9c9c9c;
+}
+#tol{
+    display:flex;
+    height:47px;
+    width:95%;
+    margin-top: 9px;
+    margin-left: 10px;
+}
+#hr{
+    height:-2px;
+    margin-top: 7px;
+    margin-left:10px;
+    width:93%;
+    border:1px solid #9c9c9c;
+}
+#name{
+    display:flex;
+    height:30px;
+    width:95%;
+    font-size: 18px;
+   color:#898888;
+    text-align: start;
+    justify-content: space-between;
+}
+#price{
+    display:flex;
+    height:30px;
+    width:95%;
+    margin-top: 20px;
+}
+#mid1{
+    display:flex;
+    height:114px;
+    width:100%;
+}
+#mid2{
+   
+    height:98%;
+    width:19%;
+}
+#value{
+    display:flex;
+    height:100%;
+    width:60%;
+    margin-top: 18px;
+}
+#paisa{
+    display:flex;
+    margin-top: 18px;
+   margin-left: 10px;
+    height:100%;
+    width:39%;
+}
+#mid3{
+   
+    margin-left:10px;
+    height:100%;
+    width:100%;
+}
+#text{
+    margin:17px;
+    font-size:20px
+}
+#box2{
+  
+    height:290px;
+    width:100%;
+    overflow: scroll;
+    margin-top: 10px;
+}
+.foot{
+    display: flex;
+    height:22px;
+    width:80%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.clr{
+    color:#2274ab;
+    margin-left: 20px;
+    font-size: 15px;
+}
+#box4{
+  
+    height:90px;
+    width:100%;
+}

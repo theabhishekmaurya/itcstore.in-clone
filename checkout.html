@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+    <link rel="stylesheet" href="./styles/checkout.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <script src="https://kit.fontawesome.com/cb6e07c0b2.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    #footer_end{
+            /* border: 1px solid; */
+            height: 150px;
+        }
+        #t2:hover{
+            cursor: pointer;
+            color:black
+        }
+        #delIcon:hover{
+            cursor: pointer;
+        }
+</style>
+<body>
+    <navbar>
+
+    </navbar>
+    <div id="su">
+        <div id="ur">
+            <div id="it">
+                <p id="titel">Products In Your Shopping Bag</p>
+            </div>
+            <div id="box5"></div>
+            <div id="box6">
+               <div id="box7">
+                   <img id="ig1"
+                   height="20px"
+                   width="20px"
+                   src="https://cdn-icons.flaticon.com/png/128/484/premium/484560.png?token=exp=1642703229~hmac=c93f0611375c8c1eb72d930d29d77bbc"/>
+                   <p id="t1">Clear Cart</p>
+               </div>
+                <div id="box8">
+                    <p id="t2">Continue Shopping</p>
+                    <img id="ig2"
+                    height="20px"
+                    width="20px"
+                    src=" https://img.icons8.com/ios-glyphs/2x/chevron-right.png"/>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="ra">
+            <div id="aj">
+                <div id="mid6">
+                    <h3 id="had">Order Summary</h3>
+                </div>
+                    <div id="mid7">
+                        <p class="odr">Sub Total</p>
+                        <p class="odr tot">Rs. 0.00</p>
+                    </div>
+                    <div id="mid8">
+                        <p class="odr">Total:</p>
+                        <p class="odr tot2">Rs. 0.00</p>
+                    </div>
+                    <div id="hr2"></div>
+                    <h3 id="sel">Select Delivery Date</h3>
+                    <input type="date" id="date" placeholder="Date of Delivery">
+                    <p id="t7">Open for contact - less delivery.</p>
+                    <button id="sub2">Proceed To Checkout</button>
+            </div>
+            <div id="ji">
+                <div class="foot">
+                    <img
+                    height="20px"
+                    width="20px"
+                    src="https://cdn-icons-png.flaticon.com/128/709/709790.png"/>
+                    <div class="clr">Get a Free Delivery for orders of Rs750 & above</div>
+    
+                </div>
+                <div class="foot">
+                    <img
+                    height="20px"
+                    width="20px"
+                    src="https://cdn-icons.flaticon.com/png/128/3263/premium/3263394.png?token=exp=1642704611~hmac=785904341573d73f1da143533304103a"/>
+                    <div class="clr">10% Off on orders of Rs 2500 & above</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
+<script src="checkout.js"></script>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    import footer2 from "./components/footer2.js"
+    
+    document.querySelector("navbar").innerHTML=navbar();
+    document.querySelector("footer").innerHTML=footer2();
+    let name=JSON.parse(localStorage.getItem("user_name"));
+    document.querySelector("#login").textContent=name.name;
+
+    document.getElementById("sub2").onclick=()=>{
+        window.location.href="information.html";
+    }
+    document.getElementById("t2").onclick=()=>{
+        window.location.href="pcare_prod.html";
+    }
+</script>

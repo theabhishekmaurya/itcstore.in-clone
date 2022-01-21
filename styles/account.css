@@ -1,0 +1,72 @@
+#account_container{
+width: 85%;
+height: 600px;
+
+margin: auto;
+font-family: sans-serif;
+}
+#logout:hover{
+    cursor: pointer;
+}
+#account_heading{
+ display: flex;
+ justify-content:space-between;
+}
+
+#logout{
+background-color:#85b73e;
+border: 1px solid black;
+color: white;
+width: 135px;
+height: 40px;
+margin-top: 20px;
+}
+
+#left>div{
+    border: 1px solid grey;
+    width:85%;
+    height: 120px;
+    border-radius:10px;
+text-align: center;
+line-height:5px;
+}
+#content{
+    display: flex;
+    gap: 15px;
+}
+#content >#left{
+
+    width: 25%;
+    height:300px;
+}
+#content>#right{
+
+    width: 60%;
+}
+
+.account_btn {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    background-color:transparent;   
+    border: none;
+    cursor: pointer;
+
+}
+
+.account_btn:hover{
+    /* border-bottom: 2px solid #85b73e; */
+    
+}
+#inside {
+    display: flex;
+    height: 120px;
+  justify-content:space-evenly;
+  height: 25px;
+  font-size: 18px;
+  color: rgb(85, 84, 84);
+}
+.edit_logo {
+    margin-top: 10px;
+}
+

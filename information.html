@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/cb6e07c0b2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/cart.css">
+    <style>
+    #top_nav{
+display: flex;
+margin-left: 10%;
+width: 90%;
+
+    }
+  #image_logo{
+     margin-top: 1%;
+     margin-left: 5%;
+
+  }
+
+    #information{
+        margin-left: 2%;
+        width: 60%;
+        height: 60px;
+        /* border: 1px solid black; */
+    } 
+    #information>img{
+        width: 100%;
+        height: 100%;
+        margin-top: 0%;
+    }
+    #lower_det{
+        width: 80%;
+        height: 800px;
+        border: 1px   black;
+        margin-top: 2%;
+        margin-left: 10%;
+        display: flex;
+    }
+    #cart_left{
+        width: 90%;
+        height: 100%;
+        border: 1px   red;
+        margin-left: 5%;
+        font-family: sans-serif;
+        /* border: 1px solid; */
+    }
+    #cart_right{
+        /* margin-left: 2%; */
+        width: 60%;
+        height: 100%;
+        border: 1px   red;
+        background-color: 
+#fafafa;
+font-family: sans-serif;
+    }
+    #cart_left p{
+      font-size: 20px;
+      margin-top: 0%;
+      font-family: sans-serif;
+      
+      width: 90%;
+    }
+    #width{
+        width: 85%;
+        height: 6%;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #name_info{
+        width: 41%;
+        height: 6%;
+        border-radius: 5px;
+    }
+    .last{
+        margin-left: 1%;
+    }
+    #city_add{
+        width: 27%;
+        height: 6%;
+        border-radius: 5px;
+    }
+    #widt{
+        width: 85%;
+        height: 6%;
+        border-radius: 5px;
+        font-family: sans-serif;
+    }
+    #phone_info{
+        width: 200px;
+        height: 50px;
+        border: 1px  black;
+        text-align: center;
+        margin-left: 72%;
+        background-color: grey;
+        color: white;
+        display: none;
+    }
+    #button_shipping{
+        margin-left: 50%;
+        width: 38%;
+        height: 8%;
+        background-color: #000000;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-size: 15px;
+    }
+    
+    #question{
+        cursor: pointer;
+    }
+    #upper_right{
+        width: 100%;
+        margin: auto;
+        height: 40%;
+        /* border: 1px solid   black; */
+    }
+    #lower_right{
+     margin-left: 5%;
+        width: 95%;
+        height: 60%;
+        border: 1px  black;
+        font-family: sans-serif;
+    }
+    #gift_card_bx{
+        width: 70%;
+        height: 10%;
+        border-radius: 5px;
+    }
+    #apply{
+        width: 26%;
+        height: 11%;
+        border-radius: 3px;
+    }
+    body{
+        font-family: sans-serif;
+    }
+    #topmsg{
+        display: inline;
+        /* border: 1px solid; */
+        width: 80%;
+        height: 10%;
+        text-align: left;
+    }
+    #topmsg>p{
+        font-size: 13px;
+    }
+    </style>
+</head>
+<body>
+    <div id="top_nav">
+
+            <img id="image_logo" src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC-Store-logo.jpg?143558" width="13%"  height="10%" alt="">
+    
+        <div id="information">
+            <img src="info.png" alt="">
+        </div>
+        
+    </div>
+    <div id="lower_det">
+        <div id="cart_left">
+            <p>Contact information</p><br>
+            <input id="width" class="eMail"type="text" placeholder="Email"> <br><br>
+            <input type="checkbox"> <div id="topmsg"><p>Keep me up to date on news and exclusive offers through all channels of communication, including WhatsApp. For more details click here</p></div> <br><br>
+            <p>Shipping address</p>
+           <select id="width"   name="Country/India">
+               <option value="">India</option>
+           </select><br><br>
+           <input id="name_info" type="text" placeholder="First name">
+           <input class="last" id="name_info" type="text" placeholder="Last name"><br><br>
+           <input id="width" class="userAdd" type="text" placeholder="Address"><br><br>
+           <input id="width" type="text" placeholder="Appartment"><br><br>
+           <input id="city_add" type="text" placeholder="City">
+           <input id="city_add"type="text" placeholder="State">
+           <input id="city_add"type="text" placeholder="Pin code"><br><br>
+           <div id="phone_info">In case we need to contact you about your order
+        </div>
+           <input id="widt" type="number" placeholder="Phone"><i id="question" class="fas fa-question-circle"></i><br><br>
+           <input type="checkbox">	Save this information for next time <br><br>
+           <button id="button_shipping">Continue to shipping</button><br><br><br>
+           <hr><br>
+    
+
+           <div id="extra_item">
+            Refund &nbsp; &nbsp; Shipping policy &nbsp; &nbsp; Privacy policy &nbsp; &nbsp; Terms of service
+           </div>
+           <br><br><br>
+        </div>
+        <div id="cart_right">
+            <div id="upper_right"></div>
+            <div id="lower_right">
+             
+                <input id="gift_card_bx" type="text" placeholder="Gift card or discount code">
+                <button id="apply">Apply</button>
+            <br><br><br>
+                <hr><br>
+                <p>Subtotal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ₹<span id="tot1">0.00</span></p>
+                <p>Shipping  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Calculate At next step</p>
+                <hr>
+                <p>Total &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;     INR ₹<span2 id="tot2">0.00</span2></p>
+                <p>Your total saving &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; Rs.0.00  </p>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("question").addEventListener("mouseover", ()=>{
+        document.getElementById("phone_info").style.display = "flex"
+    })
+    document.querySelector("body").addEventListener("mouseout",()=>{
+        document.getElementById("phone_info").style.display = "none"
+
+    })
+
+
+    function addCart(){
+    
+    var total=0, items=0;
+    let cartItem=JSON.parse(localStorage.getItem("cart_item")) || [];
+    document.getElementById("upper_right").innerHTML="";
+    cartItem.map((elem,index)=>{
+        total+=elem.quant*elem.price;
+        items+=elem.quant;
+        let div = document.createElement("div");
+        let div1 = document.createElement("div");
+        div1.setAttribute("id","mid1");
+    
+        let img1 = document.createElement("img");
+        img1.setAttribute("id","mid2");
+        img1.src=elem.image
+        let div2 = document.createElement("div");
+        div2.setAttribute("id","mid3");
+    
+        let div3 = document.createElement("div");
+        div3.setAttribute("id","name");
+        let p = document.createElement("div");
+        p.textContent=elem.name;
+        p.style.fontSize="13px";
+        p.style.marginTop="10px";
+        p.style.marginRight="10px";
+    
+        let img2 =document.createElement("img");
+        img2.src="https://cdn-icons.flaticon.com/png/128/484/premium/484560.png?token=exp=1642703229~hmac=c93f0611375c8c1eb72d930d29d77bbc";
+        img2.style.cursor="pointer";
+        img2.style.height="20px";
+        img2.style.width="20px";
+        img2.id="delIcon"
+        img2.onclick=()=>{
+            cartItem.splice(index,1);
+            console.log(cartItem);
+            localStorage.setItem("cart_item",JSON.stringify(cartItem));
+            addCart();
+        }
+
+
+        let div4=document.createElement("div");
+        div4.setAttribute("id","price");
+        let div5 = document.createElement("div");
+        div5.setAttribute("id","value");
+        let img3=document.createElement("img");
+        img3.src="https://cdn-icons.flaticon.com/png/128/3941/premium/3941860.png?token=exp=1642703740~hmac=8d5ec69fc968c553222e0bbb962cba93";
+        img3.style.height="20px";
+        img3.style.width="20px";
+        let p1 = document.createElement("div");
+        p1.textContent= 1;
+        p1.style.fontSize="20px";
+        p1.style.marginLeft="8px";
+        let img4=document.createElement("img");
+        img4.src="https://cdn-icons-png.flaticon.com/128/992/992651.png";
+        img4.style.height="20px";
+        img4.style.width="20px";
+        img4.style.marginLeft="8px";
+    
+    
+    
+        let div6 = document.createElement("div");
+        div6.setAttribute("id","paisa");
+        let p2 = document.createElement("div");
+        p2.textContent= elem.quant;
+        p2.style.fontSize="18px";
+        p2.style.marginLeft="8px";
+    
+        let img5=document.createElement("img");
+        img5.src="  https://cdn-icons.flaticon.com/png/128/2732/premium/2732657.png?token=exp=1642703822~hmac=dbf08188166b6ecc76acf5aa2e5c4b6e";
+        img5.style.height="18px";
+        img5.style.width="18px";
+        img5.style.marginLeft="1px";
+        img5.style.marginTop="2px"
+    
+        let p3 = document.createElement("div");
+        p3.textContent= `Rs. ${elem.price}`;
+        p3.style.fontSize="18px";
+        p3.style.marginLeft="8px";
+    
+        let div7=document.createElement("div");
+        div7.setAttribute("id","hr");
+    
+    
+    
+    
+    div6.append(p2,img5,p3);
+    div5.append(img3,p1,img4);
+    div4.append(div5,div6);
+    div3.append(p,img2);
+    div2.append(div3,div4);
+    div1.append(img1,div2);
+    
+    div.append(div1);
+    
+    
+    
+    document.querySelector("#upper_right").append(div,div7);
+})
+
+
+document.querySelector("#tot1").textContent=total;
+document.querySelector("#tot2").textContent=total;
+}
+addCart();
+
+document.getElementById("button_shipping").onclick=()=>{
+    console.log(1)
+    let add=document.querySelector(".userAdd").value;
+    let email=document.querySelector(".eMail").value;
+    let userAdd={
+        email:email,
+        add:add
+}
+localStorage.setItem("user_add",JSON.stringify(userAdd));
+    window.location.href="shipping.html";
+}
+
+
+
+</script>

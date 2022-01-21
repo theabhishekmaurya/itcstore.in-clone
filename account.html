@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/account.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <script src="https://kit.fontawesome.com/332452e3a6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <navbar>
+
+    </navbar>
+    <div id="account_container">
+        <div id="account_heading">
+            <h1>My Account</h1>
+            <button id="logout">LOG OUT</button>
+        </div>
+        <div id="content">
+        <div id="left">
+            <div>
+            <p id="name">Name</p>
+            <p id="mail">abc@gmail.com</p>
+        </div> 
+        <br> 
+        <div>
+        <div id="inside">
+            <p>Account Details</p>
+            <i class="edit_logo far fa-edit"></i>
+        </div>
+        <hr>
+    </div>
+        </div>
+        
+        <div id="right">
+          <button class="account_btn" id="order">Order history</button>
+          <button class="account_btn" id="adress">Address Book</button>
+          <button class="account_btn" id="basket">Smart Basket</button>
+          <hr>
+          <p id="output"></p>
+          <!-- <div id="show"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    document.querySelector("navbar").innerHTML=navbar();
+
+    let name=JSON.parse(localStorage.getItem("user_name"));
+    document.querySelector("#login").textContent="Hi, "+name.name;
+
+    let userdet=JSON.parse(localStorage.getItem("user_add"));
+    console.log(userdet);
+    document.getElementById("name").textContent=name.name;
+    document.getElementById("mail").textContent=userdet.email;
+
+    document.getElementById("logout").onclick=()=>{
+        window.location.href="index.html";
+    }
+
+    document.getElementById("logo").onclick=()=>{
+        console.log(1)
+        window.location.href="login_home.html";
+    }
+
+document.getElementById("order").addEventListener("click", order);
+function order(){
+
+document.querySelector("#output").textContent = "You haven't placed any orders yet.";
+// document.getElementById("show").textContent = "";
+
+}
+document.getElementById("adress").addEventListener("click", adress);
+function adress(){
+//    var value =  document.getElementById("show"); 
+
+}
+</script>

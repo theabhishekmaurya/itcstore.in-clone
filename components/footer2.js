@@ -3,7 +3,7 @@ function footer2(){
     return `
     <div id="footer_end">
     <div>
-<h5>INFROMATION</h5>
+<h5>INFORMATION</h5>
 <p>
 <a href="">Privacy Policy</a>
 <a href="">Terms of Use</a>

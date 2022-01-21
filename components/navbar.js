@@ -7,10 +7,7 @@ function navbar(){
         <img src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC_store_Logo_543d9c07-883c-492f-b0dd-7933eba6dad4.jpg?v=1636698157" alt="">
     </div>
     <div id="search">
-        <!-- <div>
-            <p id="pin">250001</p>
-            <p id="country">India</p>
-        </div> -->
+        
         
         <input id="searching" type="text" placeholder="Search brands, products and more">
         <div  id="search_logo"><i class="fas fa-search"></i></div>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITC Store - Buy ITC Products</title>
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/caraousel.css" />
+    <link rel="stylesheet" href="./styles/staple.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/finall.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/offer.css" />
+    <link rel="stylesheet" href="./styles/itc.css" />
+    <link rel="stylesheet" href="./styles/newITC.css" />
+    <link rel="stylesheet" href="./styles/cart.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <script
+      src="https://kit.fontawesome.com/332452e3a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/cb6e07c0b2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    .cardHead {
+      font-weight: bold;
+      margin-left: 5%;
+      color: gray;
+    }
+    #userInfo {
+      /* border: 1px solid red; */
+      width: 10%;
+      height: 10%;
+      margin-top: 2.5%;
+      margin-left: 80%;
+      position: absolute;
+      display: none;
+      background-color: whitesmoke;
+    }
+    #userInfo > div {
+      height: 40%;
+      margin-top: 5%;
+      /* border: 1px solid; */
+      display: flex;
+      align-items: center;
+    }
+    #userInfo > div > h6 {
+      margin-left: 5%;
+      color: rgb(140, 134, 146);
+    }
+    #userInfo > div > :hover {
+      cursor: pointer;
+      color: rgb(87, 51, 51);
+      transition-duration: 0.7s;
+    }
+    #cartDiv{
+            width: 100%;
+            height: 700px;
+            position: absolute;
+            display: none;
+    }
+  </style>
+  <body>
+
+    <div id="header">
+      <div id="logo">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC_store_Logo_543d9c07-883c-492f-b0dd-7933eba6dad4.jpg?v=1636698157"
+          alt=""
+        />
+      </div>
+      <div id="search">
+
+        <input
+          id="searching"
+          type="text"
+          placeholder="Search brands, products and more"
+        />
+        <div id="search_logo"><i class="fas fa-search"></i></div>
+      </div>
+      <div id="login">Login / Register</div>
+      <div id="userInfo">
+        <div><h6 id="myAcc">My Account</h6></div>
+        <div><h6 id="logOut">Logout</h6></div>
+      </div>
+      <div id="cart-logo"><i class="fas fa-shopping-cart"></i></div>
+    </div>
+    <div id="blue_line">
+      <div id="items">
+        <h3 id="home">HOME</h3>
+        <h3>|</h3>
+        <h3 id="foods">FOODS</h3>
+        <h3>|</h3>
+        <h3 id="personal_care">PERSONAL CARE</h3>
+        <h3>|</h3>
+        <h3 id="stat">STATIONARY</h3>
+        <h3>|</h3>
+        <h3 id="match">MATCHES&AGARBATTI</h3>
+        <h3>|</h3>
+        <h3 id="shb">SHOP BY BRANDS</h3>
+        <h3>|</h3>
+        <h3>SHOP ALL</h3>
+        <h3>|</h3>
+        <h3>NEW LAUNCH</h3>
+      </div>
+      <div id="food_box" class="box_food">
+        <div id="box_1">
+          <h4>BISCUITS & CAKES</h4>
+          <p>Sunfeast Marie Light</p>
+          <p>Sunfeast Dark Fantasy</p>
+          <p>Sunfeast Farmlite</p>
+          <p>Sunfeast Bounce</p>
+          <p>Sunfeast Caker</p>
+          <p>Sunfeast Mom's Magic</p>
+          <p>Sunfeast All Rounder</p>
+          <br />
+          <h4>AASHIRVAAD INSTANT MIX</h4>
+          <h4>CHOCOLATES</h4>
+          <p>Fabelle Chocolates</p>
+          <p>Fabelle Luxury Chocolates</p>
+          <h4>GIFT CENTER</h4>
+        </div>
+        <div id="box_2">
+          <h4>NOODLES & PASTA</h4>
+          <p>Sunfeast YiPPee! Pasta</p>
+          <p>Sunfeast YiPPee! Noodles</p>
+          <h4>BEVERAGES</h4>
+          <p>B Natural</p>
+          <p>Sunbean Gourmet Coffee</p>
+          <p>Sunbean Beaten Caffe</p>
+          <p>Sunfeast Milkshakes</p>
+          <h4>READY TO EAT</h4>
+          <p>Kitchens of India</p>
+          <p>Aashirvaad Instant Meals</p>
+          <p>ITC Master Chef Spreads & Dips</p>
+        </div>
+        <div id="box_3">
+          <h4>STAPLES</h4>
+          <p></p>
+          <p>Aashirvaad Atta</p>
+          <p>Aashirvaad Spices</p>
+          <p>Aashirvaad Masalas</p>
+          <p>Aashirvaad Salt</p>
+          <p>Aashirvaad Organic Atta and Dals</p>
+          <p>Aashirvaad Vermicelli</p>
+          <p>ITC Master Chef Cooking Paste</p>
+          <p>ITC Master Chef All-Purpose Gravies</p>
+          <p>Sunrise Pure</p>
+          <h4>FROZEN FOODS</h4>
+          <p>ITC Master Chef Frozen Snacks</p>
+          <p>ITC Master Chef Frozen Prawns</p>
+          <p>Farmland Frozen Vegetables</p>
+        </div>
+        <div id="box_4">
+          <h4>SNACKS</h4>
+          <p>Bingo! Mad Angles</p>
+          <p>Bingo! Original Style</p>
+          <p>Bingo! Potato Chips</p>
+          <p>Bingo! Tedhe Medhe</p>
+          <h4>DAIRY</h4>
+          <p>Aashirvaad Svasti Ghee</p>
+          <p>Aashirvaad Svasti Milk Products</p>
+          <h4>CONFECTIONERY</h4>
+          <p>Jelimals</p>
+          <p>Candyman Fantastik</p>
+          <p>Candyman Choco Double Eclairs</p>
+        </div>
+      </div>
+      <div id="product_box" class="box_food">
+        <div id="box_1">
+          <h4>SAVLON</h4>
+          <p></p>
+          <p>Antiseptic Liquid</p>
+          <p>Body wash</p>
+          <p>Surface Disinfectant Spray</p>
+          <p>FFP2 S Masks</p>
+          <p>Germ Protection Wipes</p>
+          <p>Hand Sanitizer</p>
+          <p>Handwash</p>
+          <p>Savlon Laundry Disinfectant</p>
+          <p>Home Cleaners</p>
+          <p>Soaps</p>
+          <h4>VIVEL</h4>
+          <p>Vivel Body wash</p>
+          <p>Vivel Soaps</p>
+        </div>
+        <div id="box_2">
+          <h4>CHARMIS</h4>
+          <p>Creams</p>
+          <p>Facewash</p>
+          <p>Serum</p>
+          <p>Hand Cream</p>
+          <br />
+          <h4>ESSENZA DI WILLS</h4>
+          <p>Luxury Perfume</p>
+          <p>Luxury Deodorant</p>
+          <p>Luxury Soaps</p>
+          <br />
+          <h4>NIMWASH</h4>
+          <p>Vegetable & Fruit Wash</p>
+        </div>
+        <div id="box_3">
+          <h4>DERMAFIQUE</h4>
+          <p>Anti Ageing</p>
+          <p>Body Care</p>
+          <p>Cleanser</p>
+          <p>Face Mask</p>
+          <p>Hydration</p>
+          <p>Skin Toner</p>
+          <p>Sun Care</p>
+          <br />
+          <h4>NIMEASY</h4>
+          <p>Dishwash Liquid</p>
+          <br />
+          <h4>NIMYLE</h4>
+          <p>Floor Cleaner</p>
+        </div>
+        <div id="box_4">
+          <h4>ENGAGE</h4>
+          <p>Fragrance Finder</p>
+          <p>Cologne</p>
+          <p>Deodorant</p>
+          <p>Premium Perfumes</p>
+          <p>Perfume Spray</p>
+          <p>Pocket Perfume</p>
+          <br />
+          <h4>FIAMA</h4>
+          <p>Body wash & Shower Gel</p>
+          <p>Handwash</p>
+          <p>Soaps</p>
+          <h4>SHOWER TO SHOWER</h4>
+          <p>Talc</p>
+        </div>
+      </div>
+      <div id="boxbybrand" class="box_food">
+        <div id="box_1">
+          <p></p>
+          <h4>FOODS</h4>
+          <p>Aashirvaad Atta</p>
+
+          <p>Sunfeast YiPPee!</p>
+          <p>Pasta</p>
+
+          <p>Bingo! Mad Angles</p>
+
+          <p>Aashirvaad Spices</p>
+
+          <p>Bingo! Tedhe Medhe</p>
+
+          <p>Sunfeast Bounce</p>
+
+          <p>Sunfeast Bounce</p>
+
+          <p>Sunfeast Farmlite</p>
+
+          <p>Candyman Fantastik</p>
+
+          <p>Jelimals</p>
+
+          <p>ITC Master Chef</p>
+          <p>Cooking paste</p>
+
+          <p>Farmland Frozen</p>
+          <p>Vegetables</p>
+
+          <p>Aashirvaad Instant</p>
+          <p>Meals</p>
+
+          <p>ITC Master Chef All-</p>
+          <p>Purpose Gravies</p>
+
+          <p>Sunfeast Mom's Magic</p>
+          <p>Aashirvaad Vermicelli</p>
+        </div>
+        <div id="box_2">
+          <p>B Natural</p>
+          <p>Aashirvaad Svasti ghee</p>
+          <p>Sunfeast Dark Fantasy</p>
+          <p>Aashirvaad Instant Mixes</p>
+          <p>Sunfeast Marie Light</p>
+          <p>Fabelle Chocolates</p>
+          <p>Fabelle luxury Chocolates</p>
+          <p>Sunfeast Milkshakes</p>
+          <p>ITC Master Chef Frozen Snacks</p>
+          <p>Sunbean Beaten Caffe</p>
+          <p>Aashirvaad Organic Atta and Dals</p>
+          <p>Sunrise Pure</p>
+          <p>Aashirvaad SvastiMilk Products</p>
+        </div>
+        <div id="box_3">
+          <p>Bingo! Potato Chips</p>
+          <p>Sunfeast YiPPee!Noodles</p>
+          <p>Aashirvaad Salt</p>
+          <p>Bingo! Original Style</p>
+          <p>Kitchens Of India</p>
+          <p>Candyman Choco</p>
+          <p>Double Eclairs</p>
+          <p>Sunbean Gourmet Coffee</p>
+          <p>ITC Masterchef Frozen Prawns</p>
+          <p>Aashirvaad Masalas</p>
+          <p>ITC Master Chef Spreads & Dips</p>
+          <p>Sunfeast Caker</p>
+          <p>Sunfeast All Rounder</p>
+        </div>
+        <div id="box_4">
+          <h4>PERSONAL CARE</h4>
+          <p>Charmis</p>
+          <p>Engage</p>
+          <p>Vivel</p>
+          <p>Nimwash</p>
+          <p>Nimeasy</p>
+          <h4>STATIONERY</h4>
+          <p>Classmate</p>
+          <h4>MATCHES & AGARBATTI</h4>
+          <p>Homelites</p>
+        </div>
+        <div id="box_5">
+          <p>Savlon</p>
+          <p>Nimyle</p>
+          <p>Essenza Di Wills</p>
+          <p>Dermafique</p>
+          <p>Shower to Shower</p>
+          <p>PaperKraft</p>
+          <p>Mangaldeep</p>
+        </div>
+      </div>
+      <div id="statitonary_prod">
+        <p>Classmate</p>
+        <p>PaperKraft</p>
+      </div>
+      <div id="match_box">
+        <p>Homelites</p>
+        <p>Mangaldeep</p>
+      </div>
+    </div> 
+    <div id="cartDiv">
+      <div id="main">
+          <div id="box1">
+                  <h2 id="text">My Cart</h2>
+                  <img id="can"
+                  height="28px"
+                  width="28px"
+                  src="https://cdn-icons.flaticon.com/png/128/4302/premium/4302064.png?token=exp=1642704555~hmac=74a94601077c9aa351feb14531ba7b2d"/>
+             
+          </div>
+          <div id="box2"></div>
+          <div id="box4">
+              <div id="subt">
+                   <div id="pro">
+                      <div id="p5">Sub Total </div>
+                   </div>
+                  
+                  <div id="pro1">
+                      Rs. <div id="p6">0.00</div>
+                  </div>
+              </div>
+              <div id="tol">
+                  <div id="nob">
+                      <div id="p7">Total</div>
+                  </div>
+                  <div id="nob1">
+                    Rs.  <div>0.00</div>
+                  </div>
+              </div>
+          </div>
+          <div id="box3">
+              <button id="ptc">Proceed To Checkout</button><br><br>
+              <div class="foot">
+                  <img
+                  height="20px"
+                  width="20px"
+                  src="https://cdn-icons-png.flaticon.com/128/709/709790.png"/>
+                  <div class="clr">Get a Free Delivery for orders of Rs750 & above</div>
+  
+              </div>
+              <div class="foot">
+                  <img
+                  height="20px"
+                  width="20px"
+                  src="https://cdn-icons.flaticon.com/png/128/3263/premium/3263394.png?token=exp=1642704611~hmac=785904341573d73f1da143533304103a"/>
+                  <div class="clr">10% Off on orders of Rs 2500 & above</div>
+              </div>
+             
+          </div>
+      </div>
+      
+  </div>
+    <div
+      id="topCar"
+      style="margin-top: 2%"
+      class="carousel"
+      data-flickity='{"wrapAround":true, "autoPlay": true, "imagesLoaded":true }'
+    >
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/desktop_2_a3cf88f2-a1e5-498e-a393-118e7bb31e92.jpg?v=1641557365"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/desktop_1_40518b2a-9f0e-4f89-852c-90fd251303c5.jpg?v=1641557458"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/DF-FIlls-range-header-banner_6f79f5ea-5a3c-41c4-ba67-1b83194b0a3f.jpg?v=1641884169"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/desktop_1_40518b2a-9f0e-4f89-852c-90fd251303c5.jpg?v=1641557458"
+        />
+      </div>
+    </div>
+    <div id="quickSearch">
+      <div id="insideQS">
+        <h4>Quick Search</h4>
+        <button>Atta</button>
+        <button>Soaps</button>
+        <button>Frozen Snacks</button>
+        <button>Sanitizers</button>
+        <button>Chocolates</button>
+        <button>Biscuits</button>
+      </div>
+    </div>
+    <div id="offerhea">
+      <h2 class="cardHead">Best Offers</h2>
+    </div>
+    <div id="best">
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Premium-perfume_6699aed5-4503-4d3a-81f4-4c98c0b413e5.jpg?v=1641463955"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Savlon_8d2f0582-4b54-4156-af61-6b093371f343.jpg?v=1641463955"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Vivel-body_6e85d2df-b3a2-4a4e-8387-b38f8c8b0ec8.jpg?v=1641463955"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/KOI_0b08e29b-5e01-4b4d-9801-9ee94fb1874b.jpg?v=1641463955"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Ghee_faf55f50-0293-45a2-abb1-9f716320ae25.jpg?v=1641463955"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Nimeasy_Dishwash_Gel.jpg?v=1641463955"
+        />
+      </div>
+    </div>
+    <div id="pre">
+      <div id="pre1">
+        <div><h2 style="margin-top: 2%">ITC Premium</h2></div>
+        <div id="block_4">
+          <div id="block_41">
+            <a href=""
+              ><img
+                class="imgblock1234"
+                src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Fabelle_6b7628b9-2b26-40d1-a33f-7c46f1a44d04.jpg?v=1641454352"
+                alt=""
+                width="100%"
+                height="100%"
+            /></a>
+          </div>
+          <div id="block_42">
+            <a href=""
+              ><img
+                class="imgblock1234"
+                src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/EDW_Perfume_2e45e4a8-ee94-455c-9c8c-7c88e7a4cbb3.jpg?v=1641454352"
+                alt=""
+                width="100%"
+                height="100%"
+            /></a>
+          </div>
+          <div id="block_43">
+            <a href=""
+              ><img
+                class="imgblock1234"
+                src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Paperkraft_74be64ce-1387-4c9d-8ffa-97800b3ef2a4.jpg?v=1641454352"
+                alt=""
+                width="100%"
+                height="100%"
+            /></a>
+          </div>
+          <div id="block_44">
+            <a href=""
+              ><img
+                class="imgblock1234"
+                src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Sunbean_189633e5-d603-4618-af01-5d7600480ade.jpg?v=1641454352"
+                alt=""
+                width="100%"
+                height="100%"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sellers">
+      <div id="sellers_1">
+        <div><h2 style="font-weight: bold; color: gray">Best Sellers</h2></div>
+        <div id="block_5">
+          <div>
+            <a href=""
+              ><div class="block_51">
+                <img
+                  class="imgblock12345"
+                  src="https://cdn.shopify.com/s/files/1/0173/7644/4470/products/B01GCDVOTE.Main_b6a7add0-ea28-4780-a5af-c8e6a65a473b_400x400.jpg"
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <p class="ptag">Aashirvaad Superior MP Multigrain Atta 5kg</p>
+              <button class="btn12345">Buy Now</button></a
+            >
+          </div>
+          <div>
+            <a href=""
+              ><div class="block_51">
+                <img
+                  class="imgblock12345"
+                  src="https://cdn.shopify.com/s/files/1/0173/7644/4470/products/40077102-1_3f28ecdc-670e-45a4-b0a4-4bf9994db185_400x400.jpg"
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <p class="ptag">
+                Aashirvaad Sugar Release Control Multigrain Atta 1kg
+              </p>
+              <button class="btn12345">Buy Now</button></a
+            >
+          </div>
+          <div>
+            <a href=""
+              ><div class="block_51">
+                <img
+                  class="imgblock12345"
+                  src="https://cdn.shopify.com/s/files/1/0173/7644/4470/products/HeroFOP_FCSSRs50_100g_6bbdd9ac-40f2-4359-bac3-b928e5d1ceab_400x400.jpg"
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <p class="ptag">
+                Bingo! Original Style Salt Sprinkled Potato Chips 100g
+              </p>
+              <button class="btn12345">Buy Now</button></a
+            >
+          </div>
+          <div>
+            <a href=""
+              ><div class="block_51">
+                <img
+                  class="imgblock12345"
+                  src="https://cdn.shopify.com/s/files/1/0173/7644/4470/products/Aashirvaad_Organic_Moong_Dal_1Kg_BB_HERO_e4f3bdf6-39a7-4e1a-a8f3-b17348e732d4_400x400.jpg"
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <p class="ptag">Aashirvaad Nature's Super Foods Moong Dal 1 Kg</p>
+              <button class="btn12345">Buy Now</button></a
+            >
+          </div>
+          <div>
+            <a href=""
+              ><div class="block_51">
+                <img
+                  class="imgblock12345"
+                  src="https://cdn.shopify.com/s/files/1/0173/7644/4470/products/ITCAashirvaadInstantVeggieUpma-900x900Ecommerce07092020-01_0f7650c5-ac6e-4380-88c0-e73a13f6cce0_400x400.jpg"
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <p class="ptag">Aashirvaad Instant Meals Veggie Upma Cup 80G</p>
+              <button class="btn12345">Buy Now</button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="staplehea">
+      <h2 class="cardHead">Staples</h2>
+    </div>
+    <div id="staple">
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/AashirvaadAtta.jpg?v=1641471948"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Pastes_Gravies_474d2dbe-0c04-48fa-9436-61243cde0d2a.jpg?v=1641462944"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Spices_Masalas_74c0de9d-3ed0-49b4-ab57-ad9320f5b4b9.jpg?v=1641462944"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Aashirvaad_Atta_and_Dals.jpg?v=1641467114"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Sunrise_Masala.jpg?v=1641462944"
+        />
+      </div>
+    </div>
+    <div
+      style="margin-top: 1%"
+      class="carousel"
+      data-flickity='{"wrapAround":true,"autoPlay": true, "imagesLoaded":true }'
+    >
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC-Hotel-banner-final.jpg?v=1640083928"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ExploreTheRange_Bnaturals_3c1424b9-a844-4ab4-84cb-1f8af6a98f54.jpg?v=1641461115"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ExploreTheRange_Aashirvaad_67cb80cd-3ae8-4009-8cca-cff14f3cf753.jpg?v=1641461068"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ExploreTheRange_Milkshake_fcadb403-c6ec-4310-b471-a407a82827da.jpg?v=1641461164"
+        />
+      </div>
+      <div class="carousel-cell">
+        <img
+          class="w3-image"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ExploreTheRange_Savlon_f78c2b6d-0749-4048-98aa-74226eb50ee6.jpg?v=1641461179"
+        />
+      </div>
+    </div>
+
+    <div id="hae">
+      <h2 class="cardHead">Cleaning & Hygiene</h2>
+    </div>
+    <div id="cleans">
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Savlon_Sanitzer.jpg?v=1641455713"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Savlon_Handwash_4569681c-a028-4cda-81fb-43c10d04cd34.jpg?v=1641455713"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Nimyle_c6af5ce8-ba21-4b6e-a74a-017dc2c1c424.jpg?v=1641455713"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Nimeasy_d8eb3afb-13dd-4d05-b445-f278985e0d94.jpg?v=1641455713"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Nimwash.jpg?v=1641455713"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Savlon_Disinfectant_spray.jpg?v=1641455713"
+        />
+      </div>
+    </div>
+
+    <div id="container"></div>
+
+    <div>
+      <h2 class="cardHead" id="hea">Snacks</h2>
+    </div>
+    <div id="snacks">
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC_Masterchef_Frozen_Snacks.jpg?v=1641460652"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Sunfeast_Biscuits_94432328-e987-42b4-8d36-33be76d26cd5.jpg?v=1641460652"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Chips_and_Namkeens_5dcfef7a-9d3f-42ba-a095-ad7835ef5110.jpg?v=1641460652"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Noodles_Pasta_29bdafce-d51d-48e0-807d-76cb9cf9cb06.jpg?v=1641460652"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Beverages_0c323f76-606b-4311-b5e7-cfe4bfa74da1.jpg?v=1641460652"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Fabelle_Chocolates_d4df1ffb-245f-4643-b028-38193f04a20b.jpg?v=1641460652"
+        />
+      </div>
+      <div>
+        <img
+          height="100%"
+          width="100%"
+          src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Confectionery_9e464507-22be-4278-9964-d0ff5bbe621d.jpg?v=1641460658"
+        />
+      </div>
+    </div>
+    <div id="need_basket_container">
+      <div id="head">
+        <h2>Need Based Basket</h2>
+        <button id="basket_btn">View All</button>
+      </div>
+      <div id="basket">
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Back_to_College_053d1e24-467e-4632-ae4e-638b65b576fd.jpg?v=1641452204"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Monthly_Essentials_2f1e4fee-9dee-4612-b312-62a2b1f68f5f.jpg?v=1641452204"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Wellness_Basket_fbb6c480-ad9d-4e43-b207-dd41de8ab219.jpg?v=1641452204"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Snack_Store_fe51b27e-0f90-44f2-b4e1-34f176c4aee5.jpg?v=1641452204"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <footer></footer>
+  </body>
+</html>
+<script src="cart.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="module">
+  import navbar from "./components/navbar.js";
+  import footer from "./components/footer.js";
+    // document.querySelector("navbar").innerHTML = navbar();
+  document.querySelector("footer").innerHTML = footer();
+
+  document.querySelector("#personal_care").addEventListener("click",()=>{
+    window.location.href="pcare_prod.html";
+  })
+
+  let name = JSON.parse(localStorage.getItem("user_name"));
+  document.getElementById("login").textContent = "Hi, " + name.name;
+  document.getElementById("login").addEventListener("click", () => {
+    document.querySelector("#userInfo").style.display = "block";
+  });
+  document.getElementById("logOut").addEventListener("click", () => {
+    document.querySelector("#userInfo").style.display = "none";
+    window.location.href = "index.html";
+  });
+
+  document.getElementById("myAcc").addEventListener("click", () => {
+    document.querySelector("#userInfo").style.display = "none";
+    window.location.href = "account.html";
+  });
+  document.querySelector("#userInfo").addEventListener("mouseout", () => {
+    document.querySelector("#userInfo").style.display = "none";
+  });
+  document.querySelector("#userInfo").addEventListener("mouseover", () => {
+    document.querySelector("#userInfo").style.display = "block";
+  });
+  //new itc data add start
+
+  var data = [
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0173/7644/4470/files/ITC_Hotel_b0d32ee2-f0e1-4a6d-9710-21b52e6afb05.jpg?v=1642419541",
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Fiama_Celebrations.jpg?v=1641462132",
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Nimeasy_8c9809e8-aea3-4cc3-a1ea-1148f19e6917.jpg?v=1641462132",
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0173/7644/4470/files/Frozen_Snacks_24f9b5b8-b421-499b-b844-500995d9cb05.jpg?v=1641462132",
+    },
+  ];
+
+  data.map(function (elem) {
+    var div = document.createElement("div");
+    div.setAttribute("id", "newITC");
+    var img = document.createElement("img");
+    img.setAttribute("src", elem.image_url);
+
+    var h4 = document.createElement("h4");
+    h4.textContent = elem.type;
+
+    var h1 = document.createElement("h1");
+    h1.textContent = elem.MRP;
+
+    div.append(img, h4, h1);
+
+    document.getElementById("container").append(div);
+  });
+
+   document.getElementById("cart-logo").onclick=()=>{
+     console.log(1)
+        document.querySelector("#topCar").style.display="none";
+        document.querySelector("#cartDiv").style.display="block";
+    }
+    document.getElementById("main").onmouseout=()=>{
+        document.querySelector("#topCar").style.display="block";
+        document.querySelector("#cartDiv").style.display="none";
+    }
+    document.getElementById("main").onmouseover=()=>{
+        document.querySelector("#topCar").style.display="none";
+        document.querySelector("#cartDiv").style.display="block";
+    } 
+    document.getElementById("ptc").onclick=()=>{
+      window.location.href="checkout.html";
+    }
+
+  //new itc end
+
+  //   document.getElementById("foods").addEventListener("mouseover", () => {
+  //     document.getElementById("food_box").style.display = "flex";
+  //   });
+
+  //   document.querySelector("body").addEventListener("mouseout", () => {
+  //     document.getElementById("food_box").style.display = "none";
+  //     document.getElementById("product_box").style.display = "none";
+  //     document.getElementById("boxbybrand").style.display = "none";
+  //     document.getElementById("statitonary_prod").style.display = "none";
+  //     document.getElementById("match_box").style.display = "none";
+  //   });
+  //   document.getElementById("personal_care").addEventListener("mouseover", () => {
+  //     document.getElementById("product_box").style.display = "flex";
+  //   });
+  //   document.querySelector("body").addEventListener("mouseout", () => {
+  //     document.getElementById("food_box").style.display = "none";
+  //     document.getElementById("product_box").style.display = "none";
+  //     document.getElementById("boxbybrand").style.display = "none";
+  //     document.getElementById("statitonary_prod").style.display = "none";
+  //     document.getElementById("match_box").style.display = "none";
+  //   });
+  //   document.getElementById("stat").addEventListener("mouseover", () => {
+  //     document.getElementById("statitonary_prod").style.display = "block";
+  //   });
+  //   document.getElementById("match").addEventListener("mouseover", () => {
+  //     document.getElementById("match_box").style.display = "flex";
+  //   });
+  //   document.getElementById("shb").addEventListener("mouseover", () => {
+  //     document.getElementById("boxbybrand").style.display = "flex";
+  //   });
+</script>
