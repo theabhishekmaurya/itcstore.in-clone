@@ -24,7 +24,7 @@ function addCart(){
         p.style.fontSize="15px";
     
         let img2 =document.createElement("img");
-        img2.src="https://cdn-icons.flaticon.com/png/128/484/premium/484560.png?token=exp=1642703229~hmac=c93f0611375c8c1eb72d930d29d77bbc";
+        img2.src="https://img.icons8.com/carbon-copy/2x/filled-trash.png";
         img2.style.cursor="pointer";
         img2.style.height="25px";
         img2.style.width="25px";
@@ -65,7 +65,7 @@ function addCart(){
         p2.style.marginLeft="8px";
     
         let img5=document.createElement("img");
-        img5.src="  https://cdn-icons.flaticon.com/png/128/2732/premium/2732657.png?token=exp=1642703822~hmac=dbf08188166b6ecc76acf5aa2e5c4b6e";
+        img5.src="https://img.icons8.com/ios-glyphs/2x/multiply.png";
         img5.style.height="24px";
         img5.style.width="24px";
         img5.style.marginLeft="1px";
