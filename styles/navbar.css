@@ -197,3 +197,7 @@ h3:hover{
 body{
   font-family: sans-serif;
 }
+h3:hover{
+  text-decoration: underline;
+  color: #f06d21;
+}
