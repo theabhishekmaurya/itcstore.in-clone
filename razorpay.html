@@ -202,7 +202,7 @@
     let cart=JSON.parse(localStorage.getItem("cart_item"));
     let total=0;
     cart.map((elem)=>{
-        total+=elem.price;
+        total+=elem.quant*elem.price;
     })
 
     document.getElementById("r5").textContent="₹ "+total;
