@@ -11,7 +11,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./styles/footer.css">
-    <script src="https://kit.fontawesome.com/332452e3a6.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/332452e3a6.js" 
+    crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/login_signup.css">
 
   </head>
@@ -158,94 +159,97 @@
     }
     else{
         
-        
+      let data={
+          firstName:fname,
+          lastName:lname,
+          mobile:num,
+          email:email,
+          password:pass
+          
+      }
+      data=JSON.stringify(data);
+      // console.log(data);
 
-              let data={
-                  firstName:fname,
-                  lastName:lname,
-                  mobile:num,
-                  email:email,
-                  password:pass
-                  
-              }
-              data=JSON.stringify(data);
-              // console.log(data);
-
-              let result=await fetch("http://localhost:9876/user/register",{
-                  method:'POST',
-                  body:data,
-                  headers:{
-                    "Access-Control-Allow-Origin": "http://localhost:9876",
-                    "Content-Type":"application/json"
-                    // "Access-Control-Allow-Headers": "Content-Type, Authorization"
-                  }
-              });
-              const response = await result.json();
-              console.log((response.errors))
-              if(response.errors){
-                response.errors.forEach(elem => {
-                  let str = `Error !\n${elem.param} : ${elem.msg}`
-                  alert(str);
-                  
-                })
-              }
-              else{
-                console.log(response)
-                alert("Signup Successful !");
-                
-                document.getElementById("loginDiv").style.display="block";
-                document.getElementById("signupDiv").style.display="none";
-                document.getElementById("signHR").style.display="none";
-                document.getElementById("logHR").style.display="block";
-              }
-
-
+      let result=await fetch("http://localhost:9876/user/register",{
+          method:'POST',
+          body:data,
+          headers:{
+            "Access-Control-Allow-Origin": "http://localhost:9876",
+            "Content-Type":"application/json"
+            // "Access-Control-Allow-Headers": "Content-Type, Authorization"
           }
+      });
+      const response = await result.json();
+      console.log((response.errors))
+      if(response.errors){
+        response.errors.forEach(elem => {
+          let str = `Error !\n${elem.param} : ${elem.msg}`
+          alert(str);
+          
+        })
+      }
+      else{
+        console.log(response)
+        alert("Signup Successful !");
         
-  
+        document.getElementById("loginDiv").style.display="block";
+        document.getElementById("signupDiv").style.display="none";
+        document.getElementById("signHR").style.display="none";
+        document.getElementById("logHR").style.display="block";
+      }
+
+    }
+        
 }
 document.querySelector("#loginBtn").addEventListener("click",()=>{  
     getUser();
 });
 
 
-function getUser(){
-    // let res=await fetch("http://127.0.0.1:3000/api/users");
-    let data=JSON.parse(localStorage.getItem("user")) || [];
-    console.log(data);
+async function getUser(){
+    // let res=await fetch("http://localhost:9876/user/login");   
     let email=document.getElementById("loginEmail").value;
     let pass=document.getElementById("loginPass").value;
-    var count=0;
+    
     if(email=="" || pass==""){
-        alert("All fields are mandatory");
+      alert("All fields are mandatory");
     }
     else{
+      let login={
+        email,
+        password:pass
+      }
+      login=JSON.stringify(login);
 
-        data.map((elem)=>{
-            if(elem.id==email){
-                if(elem.password==pass){
-                    let user={
-                      name:elem.firstname
-                    }
-                    console.log(elem.firstname);
-                    localStorage.setItem("user_name",JSON.stringify(user));
-                    alert("Login Successful");
-                    window.location.href="login_home.html"
-                }
-                else{
-                    alert("Wrong Password");
-                }
-                count=1;
-            }
-        
+      let result=await fetch("http://localhost:9876/user/login",{
+          method:'POST',
+          body:login,
+          headers:{
+            "Access-Control-Allow-Origin": "http://localhost:9876",
+            "Content-Type":"application/json"
+            // "Access-Control-Allow-Headers": "Content-Type, Authorization"
+          }
         });
-        
-        if(count==0){
-            alert("Record not found");
+        let response = await result.json();
+        if(response.err){
+          alert(response.err)
+        }
+        else{
+          let user={
+              name:response.user[0].firstName,
+            }
+          let token={
+            token:response.token
+          }
+            localStorage.setItem("user_name",JSON.stringify(user));
+            localStorage.setItem("active_token",JSON.stringify(token));
+            // console.log(response.token)
+            
+            window.location.href="login_home.html"
         }
     }
 }
 
-  //authentication end
+//authentication end
 
 </script>

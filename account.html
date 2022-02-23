@@ -59,6 +59,10 @@
     document.getElementById("mail").textContent=userdet.email;
 
     document.getElementById("logout").onclick=()=>{
+        let token={
+            token:""
+          }
+            localStorage.setItem("active_token",JSON.stringify(token));
         window.location.href="index.html";
     }
 

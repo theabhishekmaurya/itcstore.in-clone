@@ -62,7 +62,7 @@ router.post("/login", async(req, res)=>{
         console.log(user)
         if(user.length==0){
             
-            return res.send("User do not exist, Please try creating an account");
+            return res.send({err:"User do not exist, Please try creating an account"});
         }
         if(user[0].checkPassword(req.body.password)){
             
@@ -70,7 +70,7 @@ router.post("/login", async(req, res)=>{
             res.send({user, token});
         }
         else{
-            res.send("Email or password not correct");
+            res.send({err:"Email or password not correct"});
         }
     }
     catch(e){

@@ -864,6 +864,10 @@
   });
   document.getElementById("logOut").addEventListener("click", () => {
     document.querySelector("#userInfo").style.display = "none";
+    let token={
+            token:""
+          }
+          localStorage.setItem("active_token",JSON.stringify(token));
     window.location.href = "index.html";
   });
 
