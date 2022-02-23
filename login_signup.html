@@ -143,103 +143,109 @@
 
   //authentication start
   document.querySelector("#signupbtn>button").addEventListener("click",()=>{
-      addUser();
-  });
-          function addUser(){
-            let uData=JSON.parse(localStorage.getItem("user")) || [];
-                console.log(uData);
-            let fname=document.getElementById("fname").value;
-            let lname=document.getElementById("lname").value;
-            let num=document.getElementById("num").value;
-            let email=document.getElementById("email").value;
-            let pass=document.getElementById("pass").value;
-            if(fname=="" || lname=="" || num=="" || email=="" || pass==""){
-                alert("Enter all the fields");
-            }
-            else{
-                
-                let uData=JSON.parse(localStorage.getItem("user")) || [];
-                console.log(uData);
-                var count2=0;
-                uData.map((elem)=>{
-                    if(elem.id==email){
-                        count2=1;
-                        alert("User already exists, please try logging in");
-                    }
+    addUser();
+  });   
+  async function addUser(){
+    // let uData=JSON.parse(localStorage.getItem("user")) || [];
+    //     console.log(uData);
+    let fname=document.getElementById("fname").value;
+    let lname=document.getElementById("lname").value;
+    let num=document.getElementById("num").value;
+    let email=document.getElementById("email").value;
+    let pass=document.getElementById("pass").value;
+    if(fname=="" || lname=="" || num=="" || email=="" || pass==""){
+        alert("Enter all the fields");
+    }
+    else{
+        
+        
+
+              let data={
+                  firstName:fname,
+                  lastName:lname,
+                  mobile:num,
+                  email:email,
+                  password:pass
+                  
+              }
+              data=JSON.stringify(data);
+              // console.log(data);
+
+              let result=await fetch("http://localhost:9876/user/register",{
+                  method:'POST',
+                  body:data,
+                  headers:{
+                    "Access-Control-Allow-Origin": "http://localhost:9876",
+                    "Content-Type":"application/json"
+                    // "Access-Control-Allow-Headers": "Content-Type, Authorization"
+                  }
+              });
+              const response = await result.json();
+              console.log((response.errors))
+              if(response.errors){
+                response.errors.forEach(elem => {
+                  let str = `Error !\n${elem.param} : ${elem.msg}`
+                  alert(str);
+                  
                 })
-                if(count2==0){
+              }
+              else{
+                console.log(response)
+                alert("Signup Successful !");
+                
+                document.getElementById("loginDiv").style.display="block";
+                document.getElementById("signupDiv").style.display="none";
+                document.getElementById("signHR").style.display="none";
+                document.getElementById("logHR").style.display="block";
+              }
 
-                    let data={
-                        firstname:fname,
-                        lastname:lname,
-                        number:num,
-                        id:email,
-                        password:pass
-                        
+
+          }
+        
+  
+}
+document.querySelector("#loginBtn").addEventListener("click",()=>{  
+    getUser();
+});
+
+
+function getUser(){
+    // let res=await fetch("http://127.0.0.1:3000/api/users");
+    let data=JSON.parse(localStorage.getItem("user")) || [];
+    console.log(data);
+    let email=document.getElementById("loginEmail").value;
+    let pass=document.getElementById("loginPass").value;
+    var count=0;
+    if(email=="" || pass==""){
+        alert("All fields are mandatory");
+    }
+    else{
+
+        data.map((elem)=>{
+            if(elem.id==email){
+                if(elem.password==pass){
+                    let user={
+                      name:elem.firstname
                     }
-                    uData.push(data);
-                    uData=JSON.stringify(uData);
-                    console.log(uData)
-                    // let res=await fetch("http://127.0.0.1:3000/api/users",{
-                    //     method:'POST',
-                    //     body:data,
-                    //     headers:{
-                    //         "Content-Type":"application/json"
-                    //     }
-                    // });
-                    localStorage.setItem("user",uData);
-                    alert("Signup Successful !")
-                    document.getElementById("loginDiv").style.display="block";
-                    document.getElementById("signupDiv").style.display="none";
-                    document.getElementById("signHR").style.display="none";
-                    document.getElementById("logHR").style.display="block";
+                    console.log(elem.firstname);
+                    localStorage.setItem("user_name",JSON.stringify(user));
+                    alert("Login Successful");
+                    window.location.href="login_home.html"
                 }
+                else{
+                    alert("Wrong Password");
                 }
-            console.log(1);
-        }
-
-        document.querySelector("#loginBtn").addEventListener("click",()=>{  
-            getUser();
+                count=1;
+            }
+        
         });
-
-        function getUser(){
-            // let res=await fetch("http://127.0.0.1:3000/api/users");
-            let data=JSON.parse(localStorage.getItem("user")) || [];
-            console.log(data);
-            let email=document.getElementById("loginEmail").value;
-            let pass=document.getElementById("loginPass").value;
-            var count=0;
-            if(email=="" || pass==""){
-                alert("All fields are mandatory");
-            }
-            else{
-
-                data.map((elem)=>{
-                    if(elem.id==email){
-                        if(elem.password==pass){
-                            let user={
-                              name:elem.firstname
-                            }
-                            console.log(elem.firstname);
-                            localStorage.setItem("user_name",JSON.stringify(user));
-                            alert("Login Successful");
-                            window.location.href="login_home.html"
-                        }
-                        else{
-                            alert("Wrong Password");
-                        }
-                        count=1;
-                    }
-                
-                })
-                if(count==0){
-                    alert("Record not found");
-                }
-            }
+        
+        if(count==0){
+            alert("Record not found");
         }
+    }
+}
 
   //authentication end
 
 </script>
-
-<!-- <script src="./scripts/nav.js"></script> -->
