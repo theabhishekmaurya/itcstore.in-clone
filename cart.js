@@ -1,4 +1,3 @@
-
 function addCart(){
     
     var total=0, items=0;
@@ -54,8 +53,6 @@ function addCart(){
         img4.style.height="25px";
         img4.style.width="25px";
         img4.style.marginLeft="8px";
-    
-    
     
         let div6 = document.createElement("div");
         div6.setAttribute("id","paisa");
