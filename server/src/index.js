@@ -9,9 +9,9 @@ const app = express();
 const cors=require("cors");
 
 const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
 }
 
 app.use(cors(corsOptions));
@@ -21,18 +21,18 @@ app.use("/user", userController);
 app.use("/cart", cartController);
 
 passport.serializeUser(function(user, done) {
-    done(null, user);
-  });
+  done(null, user);
+});
   
-  passport.deserializeUser(function(user, done) {
-    done(null, user);
-  });
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 app.get('/auth/google',
   passport.authenticate('google', { scope:
   	[ 'email', 'profile' ] }
 ));
- 
+
 
 app.get( '/auth/google/callback',
     passport.authenticate( 'google', {
@@ -48,4 +48,4 @@ app.get( '/auth/google/callback',
 app.listen(9876, ()=>{
     connect();
     console.log("Listening at 9876");
-})
+});
