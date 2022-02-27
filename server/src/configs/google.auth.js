@@ -5,7 +5,7 @@ const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 passport.use(new GoogleStrategy({
     clientID     : "135201624777-81tut00a5qjhvkpnvodudalgb8hcvtfq.apps.googleusercontent.com",
     clientSecret : "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",
-    callbackURL  : "http://www.myitcstore.netlify.app/auth/google/callback",
+    callbackURL  : "/auth/google/callback",
     passReqToCallback   : true
   },
   async function(request, accessToken, refreshToken, profile, done) {
