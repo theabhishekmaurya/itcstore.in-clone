@@ -3,9 +3,13 @@ const connect=require("./configs/db");
 const userController = require("./controllers/user.controller");
 const cartController = require("./controllers/cart.controller");
 const passport = require("../src/configs/google.auth");
-const path=require("path");
+require("dotenv").config();
 const app = express();
+const path = require("path")
+const port = process.env.PORT || 5423
+// console.log(path.join(__dirname,"../../"))
 
+app.use(express.static(path.join(__dirname,"../../"))); 
 const cors=require("cors");
 
 const corsOptions ={
@@ -17,6 +21,14 @@ const corsOptions ={
 app.use(cors(corsOptions));
 app.use(express.json());
 
+app.get("/", (req, res)=>{
+  try{
+    res.send("Home")
+  }
+  catch(e){
+    res.send(e.message);
+  }
+})
 app.use("/user", userController);
 app.use("/cart", cartController);
 
@@ -45,7 +57,7 @@ app.get( '/auth/google/callback',
 
 
 
-app.listen(9876, ()=>{
+app.listen(port, ()=>{
     connect();
-    console.log("Listening at 9876");
+    console.log(`Listening at ${port}`);
 });
