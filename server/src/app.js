@@ -6,7 +6,7 @@ const passport = require("../src/configs/google.auth");
 require("dotenv").config();
 const app = express();
 const path = require("path")
-const port = process.env.PORT || 5423
+const port = process.env.PORT || 9876
 // console.log(path.join(__dirname,"../../"))
 
 app.use(express.static(path.join(__dirname,"../../"))); 

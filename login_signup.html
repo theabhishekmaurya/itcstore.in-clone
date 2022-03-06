@@ -170,7 +170,7 @@
       data=JSON.stringify(data);
       // console.log(data);
 
-      let result=await fetch("http://localhost:9876/user/register",{
+      let result=await fetch("/user/register",{
           method:'POST',
           body:data,
           headers:{
@@ -207,7 +207,7 @@ document.querySelector("#loginBtn").addEventListener("click",()=>{
 
 
 async function getUser(){
-    // let res=await fetch("http://localhost:9876/user/login");   
+
     let email=document.getElementById("loginEmail").value;
     let pass=document.getElementById("loginPass").value;
     
@@ -221,11 +221,11 @@ async function getUser(){
       }
       login=JSON.stringify(login);
 
-      let result=await fetch("http://localhost:9876/user/login",{
+      let result=await fetch("/user/login",{
           method:'POST',
           body:login,
           headers:{
-            "Access-Control-Allow-Origin": "http://localhost:9876",
+            // "Access-Control-Allow-Origin": "http://localhost:9876",
             "Content-Type":"application/json"
             // "Access-Control-Allow-Headers": "Content-Type, Authorization"
           }
