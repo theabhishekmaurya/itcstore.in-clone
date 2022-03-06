@@ -21,14 +21,14 @@ const corsOptions ={
 app.use(cors(corsOptions));
 app.use(express.json());
 
-app.get("/", (req, res)=>{
-  try{
-    res.send("Home");
-  }
-  catch(e){
-    res.send(e.message);
-  }
-})
+// app.get("/", (req, res)=>{
+//   try{
+
+//   }
+//   catch(e){
+//     res.send(e.message);
+//   }
+// })
 app.use("/user", userController);
 app.use("/cart", cartController);
 
