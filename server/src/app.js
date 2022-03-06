@@ -7,9 +7,8 @@ require("dotenv").config();
 const app = express();
 const path = require("path");
 const port = process.env.PORT || 9876;
-// console.log(path.join(__dirname,"../../public"))
 
-app.use("/static", express.static(path.join(__dirname, "../../public")));
+app.use(express.static(path.join(__dirname, "../../public")));
 const cors = require("cors");
 
 const corsOptions = {
@@ -23,6 +22,7 @@ app.use(express.json());
 
 app.get("", (req, res) => {
   try {
+    // res.send("Home")
   } catch (e) {
     res.send(e.message);
   }
