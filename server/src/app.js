@@ -23,7 +23,7 @@ app.use(express.json());
 
 app.get("/", (req, res)=>{
   try{
-    res.send("Home")
+    res.send("Home");
   }
   catch(e){
     res.send(e.message);

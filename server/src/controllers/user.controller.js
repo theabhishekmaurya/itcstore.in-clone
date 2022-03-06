@@ -59,7 +59,7 @@ async(req, res)=>{
 router.post("/login", async(req, res)=>{
     try{
         const user = await User.find({email:req.body.email});
-        console.log(user)
+
         if(user.length==0){
             
             return res.send({err:"User do not exist, Please try creating an account"});
